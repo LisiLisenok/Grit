@@ -1,4 +1,4 @@
-Grit is asynchronous reactive library.
+Grit is multithread asynchronous reactive library written on AS3.
 
 Consists of following parts:
 * collections with synchronous access

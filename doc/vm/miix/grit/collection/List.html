@@ -1,0 +1,267 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><!-- saved from url=(0014)about:internet --><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" href="../../../../style.css" type="text/css" media="screen"><link rel="stylesheet" href="../../../../print.css" type="text/css" media="print"><link rel="stylesheet" href="../../../../override.css" type="text/css"><meta name="keywords" content="List,vm.miix.grit.collection.List,_item,_key,_size,current,empty,empty,first,isLocked,item,items,items,items,iterator,iterator,iterator,iterator,iterator,key,keys,keys,keys,last,mutator,mutator,reversed,reversed,reversed,sequence,sequence,size,size,size,size,accept,accept,add,add,add,byKey,byKey,byKey,chain,chain,chain,clear,clear,clear,clone,clone,clone,cloneWith,contains,contains,contains,count,cycled,cycled,cycled,fillCollection,filter,filter,filter,findFirstItem,findFirstOccurrence,findFirstOccurrence,findFirstOccurrence,findLastItem,flipEnd,flipStart,forEach,forEachItem,forEachItem,forEachItem,forEachKeyItem,forEachKeyItem,forEachKeyItem,fromFinalVector,fromPairs,getAt,getAt,getAt,hasNext,hasPrevious,immutable,insert,intDecreasing,intIncreasing,interpolateNumber,invoke,invoke,invoke,invokeWith,item,itemTriggered,lock,lock,map,map,map,next,nextActive,numberDecreasing,numberIncreasing,pop,pop,prevActive,previous,push,push,putBefore,putBefore,range,range,range,remove,remove,removeItem,repeated,repeated,repeated,skip,skip,skip,sort,step,step,stringDecreasing,stringIncreasing,take,take,take,toString,uintDecreasing,uintIncreasing,unlock,unlock,unlock,zip"><title>vm.miix.grit.collection.List</title></head><body><script language="javascript" type="text/javascript" src="../../../../asdoc.js"></script><script language="javascript" type="text/javascript" src="../../../../help.js"></script><script language="javascript" type="text/javascript" src="../../../../cookies.js"></script><script language="javascript" type="text/javascript"><!--
+				asdocTitle = 'List - API Documentation';
+				var baseRef = '../../../../';
+				window.onload = configPage;
+			--></script>
+<script type="text/javascript">
+			scrollToNameAnchor();
+		</script><table class="titleTable" cellpadding="0" cellspacing="0" id="titleTable" style="display:none"><tr><td class="titleTableTitle" align="left">Grit - as3 reactive asynchronous library</td><td class="titleTableTopNav" align="right"><a href="../../../../package-summary.html" onclick="loadClassListFrame('../../../../all-classes.html')">All Packages</a>&nbsp;|&nbsp;<a href="../../../../class-summary.html" onclick="loadClassListFrame('../../../../all-classes.html')">All Classes</a>&nbsp;|&nbsp;<a href="../../../../all-index-A.html" onclick="loadClassListFrame('../../../../index-list.html')">Index</a>&nbsp;|&nbsp;<a id="framesLink1" href="../../../../index.html?vm/miix/grit/collection/List.html&amp;vm/miix/grit/collection/class-list.html">Frames</a><a id="noFramesLink1" style="display:none" href="" onclick="parent.location=document.location"> No Frames </a></td><td class="titleTableLogo" align="right" rowspan="3"><img src="../../../../images/logo.jpg" class="logoImage" alt=" Adobe Logo " title=" Adobe Logo "></td></tr><tr class="titleTableRow2"><td class="titleTableSubTitle" id="subTitle" align="left">List</td><td class="titleTableSubNav" id="subNav" align="right"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td></tr><tr class="titleTableRow3"><td colspan="3">&nbsp;</td></tr></table><script language="javascript" type="text/javascript" xml:space="preserve">
+				<!--
+				
+					if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("List"); titleBar_setSubNav(false,true,false,false,false,false,false,false,true,false,false	,false,false,false,false,false);}	
+				-->
+			</script><div xmlns:fn="http://www.w3.org/2005/xpath-functions" class="MainContent"><table class="classHeaderTable" cellpadding="0" cellspacing="0"><tr><td class="classHeaderTableLabel">Package</td><td><a href="package-detail.html" onclick="javascript:loadClassListFrame('class-list.html')">vm.miix.grit.collection</a></td></tr><tr><td class="classHeaderTableLabel">Class</td><td class="classSignature">public  class  List</td></tr><tr><td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">List  <img src="../../../../images/inherit-arrow.gif" title="Inheritance" alt="Inheritance" class="inheritArrow"> vm.miix.grit.collection.IterableBase</td></tr><tr><td class="classHeaderTableLabel">Implements</td><td> <a href="../../../../vm/miix/grit/collection/ISet.html">ISet</a></td></tr><tr><td class="classHeaderTableLabel">Subclasses</td><td> <a href="../../../../vm/miix/grit/collection/FunctionList.html">FunctionList</a></td></tr></table><p></p><p></p><p></p>
+	 dual-direction mutable linked list of items
+	 <p></p><br/><hr></div><a name="propertySummary"></a><div class="summarySection"><div class="summaryTableTitle">Public Properties</div><table cellspacing="0" cellpadding="3" class="summaryTable " id="summaryTableProperty"><tr><th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined By</th></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#first" class="signatureLink">first</a> : ListItem = null<div class="summaryTableDescription">
+		 first item in the list
+		 </div></td><td class="summaryTableOwnerCol">List</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#isLocked" class="signatureLink">isLocked</a> : Boolean<div class="summaryTableDescription">[read-only] </div></td><td class="summaryTableOwnerCol">List</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#iterator" class="signatureLink">iterator</a> : <a href="../../../../vm/miix/grit/collection/IIterator.html">IIterator</a><div class="summaryTableDescription">[override] [read-only] 
+		 iterator of mutable collection may produce unexpected results if items added / removed during iterations
+		 
+		 iterating collection using iterator
+		 </div></td><td class="summaryTableOwnerCol">List</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#last" class="signatureLink">last</a> : ListItem = null<div class="summaryTableDescription">
+		 last item in the list
+		 </div></td><td class="summaryTableOwnerCol">List</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#mutator" class="signatureLink">mutator</a> : <a href="../../../../vm/miix/grit/collection/IMutator.html">IMutator</a><div class="summaryTableDescription">[read-only] 
+		 
+		 set mutator - add / remove items
+		 </div></td><td class="summaryTableOwnerCol">List</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#reversed" class="signatureLink">reversed</a> : <a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a><div class="summaryTableDescription">[override] [read-only] 
+		 returns copied immutable collection
+		 eager
+		 
+		 collection contained the same elements but in reverse order
+		 lazy
+		 </div></td><td class="summaryTableOwnerCol">List</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#_size" class="signatureLink">_size</a> : int = 0<div class="summaryTableDescription">
+		 number of items in the list
+		 </div></td><td class="summaryTableOwnerCol">List</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#size" class="signatureLink">size</a> : int<div class="summaryTableDescription">[override] [read-only] 
+		 return number of active items in the list
+		 
+		 total number of elements in the collection, may requires collection iteration
+		 </div></td><td class="summaryTableOwnerCol">List</td></tr></table></div><a name="methodSummary"></a><div class="summarySection"><div class="summaryTableTitle">Public Methods </div><table cellspacing="0" cellpadding="3" class="summaryTable " id="summaryTableMethod"><tr><th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined By</th></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#List()" class="signatureLink">List</a>()</div><div class="summaryTableDescription"></div></td><td class="summaryTableOwnerCol">List</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#accept()" class="signatureLink">accept</a>():Object</div><div class="summaryTableDescription">
+		 
+		 remove first item from the collection and return it
+		 </div></td><td class="summaryTableOwnerCol">List</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#add()" class="signatureLink">add</a>(item:Object):<a href="../../../../vm/miix/grit/trigger/ITriggered.html">ITriggered</a></div><div class="summaryTableDescription">
+		 
+		 add item at first position
+		 </div></td><td class="summaryTableOwnerCol">List</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#chain()" class="signatureLink">chain</a>(other:<a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a>):<a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></div><div class="summaryTableDescription">[override] 
+		 returns copied immutable collection
+		 eager
+		 
+		 produces a collection which contains items of this collection, in the order in which they occur in this collection,
+		 followed by the items of the other collection in the order in which they occur in the other collection.</div></td><td class="summaryTableOwnerCol">List</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#clear()" class="signatureLink">clear</a>():void</div><div class="summaryTableDescription">
+		 
+		 remove all items from the list
+		 </div></td><td class="summaryTableOwnerCol">List</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#cycled()" class="signatureLink">cycled</a>(nextCycle:Function = null):<a href="../../../../vm/miix/grit/collection/IIterator.html">IIterator</a></div><div class="summaryTableDescription">[override] 
+		 returns iterator from copied immutable collection
+		 eager
+		 
+		 infinite cycling iterating.</div></td><td class="summaryTableOwnerCol">List</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#filter()" class="signatureLink">filter</a>(filtering:Function):<a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></div><div class="summaryTableDescription">[override] 
+		 returns copied immutable collection
+		 eager
+		 
+		 produces new collection with elements meet predicate function filtering
+		 lazy
+		 </div></td><td class="summaryTableOwnerCol">List</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#itemTriggered()" class="signatureLink">itemTriggered</a>(listItem:ListItem):<a href="../../../../vm/miix/grit/trigger/ITriggered.html">ITriggered</a></div><div class="summaryTableDescription">
+		 returns trigerred for the list item
+		 </div></td><td class="summaryTableOwnerCol">List</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#lock()" class="signatureLink">lock</a>():void</div><div class="summaryTableDescription">
+		 
+		 lock the collection.</div></td><td class="summaryTableOwnerCol">List</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#map()" class="signatureLink">map</a>(mapping:Function):<a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></div><div class="summaryTableDescription">[override] 
+		 returns copied immutable collection
+		 eager
+		 
+		 produces new collection with elements mapped by mapping function
+		 lazy
+		 </div></td><td class="summaryTableOwnerCol">List</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#nextActive()" class="signatureLink">nextActive</a>(listItem:ListItem):ListItem</div><div class="summaryTableDescription">
+		 next active invluding listItem
+		 </div></td><td class="summaryTableOwnerCol">List</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#pop()" class="signatureLink">pop</a>():Object</div><div class="summaryTableDescription">
+		 
+		 remove last item from the collection and return it.</div></td><td class="summaryTableOwnerCol">List</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#prevActive()" class="signatureLink">prevActive</a>(listItem:ListItem):ListItem</div><div class="summaryTableDescription">
+		 previous active invluding listItem
+		 </div></td><td class="summaryTableOwnerCol">List</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#push()" class="signatureLink">push</a>(item:Object):<a href="../../../../vm/miix/grit/trigger/ITriggered.html">ITriggered</a></div><div class="summaryTableDescription">
+		 
+		 add item at last position
+		 </div></td><td class="summaryTableOwnerCol">List</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#putBefore()" class="signatureLink">putBefore</a>(item:Object, before:ListItem):<a href="../../../../vm/miix/grit/trigger/ITriggered.html">ITriggered</a></div><div class="summaryTableDescription">
+		 put new item before specified, if listItem is null put last
+		 </div></td><td class="summaryTableOwnerCol">List</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#range()" class="signatureLink">range</a>(from:int, to:int):<a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></div><div class="summaryTableDescription">[override] 
+		 returns copied immutable collection
+		 eager
+		 
+		 produces a collection containing only items within specified range including ends
+		 lazy
+		 </div></td><td class="summaryTableOwnerCol">List</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#removeItem()" class="signatureLink">removeItem</a>(listItem:ListItem):void</div><div class="summaryTableDescription">
+		 remove item if unlocked
+		 </div></td><td class="summaryTableOwnerCol">List</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#repeated()" class="signatureLink">repeated</a>(nextCycle:Function = null):<a href="../../../../vm/miix/grit/collection/IIterator.html">IIterator</a></div><div class="summaryTableDescription">[override] 
+		 returns iterator from copied immutable collection
+		 eager
+		 
+		 infinite repeated iterating.</div></td><td class="summaryTableOwnerCol">List</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#skip()" class="signatureLink">skip</a>(skipped:int):<a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></div><div class="summaryTableDescription">[override] 
+		 returns copied immutable collection
+		 eager
+		 
+		 produces a collection containing the items of this collection,
+		 after skipping the first skipped items produced by its iterator.</div></td><td class="summaryTableOwnerCol">List</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#take()" class="signatureLink">take</a>(taken:int):<a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></div><div class="summaryTableDescription">[override] 
+		 returns copied immutable collection
+		 eager
+		 
+		 produces a collection containing the first taken items of this collection.</div></td><td class="summaryTableOwnerCol">List</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#unlock()" class="signatureLink">unlock</a>():void</div><div class="summaryTableDescription">
+		 
+		 unlock the collection.</div></td><td class="summaryTableOwnerCol">List</td></tr></table></div><script language="javascript" type="text/javascript"><!--
+										showHideInherited();
+										--></script><div class="MainContent"><div class="detailSectionHeader">Property Detail</div><a name="propertyDetail"></a><a name="_size"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">_size</td><td class="detailHeaderType">property</td></tr></table><div class="detailBody"><code>public var _size:int = 0</code><p></p><p></p><p>
+		 number of items in the list
+		 </p></div><a name="propertyDetail"></a><a name="first"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">first</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public var first:ListItem = null</code><p></p><p></p><p>
+		 first item in the list
+		 </p></div><a name="propertyDetail"></a><a name="isLocked"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">isLocked</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>isLocked:Boolean</code>&nbsp;&nbsp;[read-only] <p></p><br/><span class="label"> Implementation </span><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function get isLocked():Boolean</code><br/></div><a name="propertyDetail"></a><a name="iterator"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">iterator</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>iterator:<a href="../../../../vm/miix/grit/collection/IIterator.html">IIterator</a></code>&nbsp;&nbsp;[read-only] [override] <p></p><p></p><p>
+		 iterator of mutable collection may produce unexpected results if items added / removed during iterations
+		 
+		 iterating collection using iterator
+		 </p><br/><span class="label"> Implementation </span><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function get iterator():<a href="../../../../vm/miix/grit/collection/IIterator.html">IIterator</a></code><br/></div><a name="propertyDetail"></a><a name="last"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">last</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>public var last:ListItem = null</code><p></p><p></p><p>
+		 last item in the list
+		 </p></div><a name="propertyDetail"></a><a name="mutator"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">mutator</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>mutator:<a href="../../../../vm/miix/grit/collection/IMutator.html">IMutator</a></code>&nbsp;&nbsp;[read-only] <p></p><p></p><p>
+		 
+		 set mutator - add / remove items
+		 </p><br/><span class="label"> Implementation </span><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function get mutator():<a href="../../../../vm/miix/grit/collection/IMutator.html">IMutator</a></code><br/></div><a name="propertyDetail"></a><a name="reversed"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">reversed</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>reversed:<a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></code>&nbsp;&nbsp;[read-only] [override] <p></p><p></p><p>
+		 returns copied immutable collection
+		 <p><i>eager</i></p>
+		 
+		 collection contained the same elements but in reverse order
+		 <p><i>lazy</i></p>
+		 </p><br/><span class="label"> Implementation </span><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function get reversed():<a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></code><br/></div><a name="propertyDetail"></a><a name="size"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">size</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>size:int</code>&nbsp;&nbsp;[read-only] [override] <p></p><p></p><p>
+		 return number of active items in the list
+		 
+		 total number of elements in the collection, may requires collection iteration
+		 </p><br/><span class="label"> Implementation </span><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function get size():int</code><br/></div><a name="constructorDetail"></a><div class="detailSectionHeader">Constructor Detail</div><a name="List()"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">List</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">Constructor</td></tr></table><div class="detailBody"><code>public function List()</code><p></p><br/><br/></div><a name="methodDetail"></a><div class="detailSectionHeader">Method Detail</div><a name="accept()"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">accept</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td></tr></table><div class="detailBody"><code> public function accept():Object</code><p></p><p></p><p>
+		 
+		 remove first item from the collection and return it
+		 </p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>Object</code> &mdash; first collection item (already removed) or null if doesn't exists
+		 </td></tr></table></div><a name="add()"></a><a name="add(Object)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">add</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function add(item:Object):<a href="../../../../vm/miix/grit/trigger/ITriggered.html">ITriggered</a></code><p></p><p></p><p>
+		 
+		 add item at first position
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">item</span>:Object</code> &mdash; item to be added
+		 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code><a href="../../../../vm/miix/grit/trigger/ITriggered.html">ITriggered</a></code> &mdash; <code>triggered</code> to activate / deactivate and remove this item from the collection
+		 inactive items don't extracted by iterators
+		 </td></tr></table></div><a name="chain()"></a><a name="chain(vm.miix.grit.collection.IIterable)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">chain</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>override public function chain(other:<a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a>):<a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></code><p></p><p></p><p>
+		 returns copied immutable collection
+		 <p><i>eager</i></p>
+		 
+		 produces a collection which contains items of this collection, in the order in which they occur in this collection,
+		 followed by the items of the other collection in the order in which they occur in the other collection.
+		 <p><i>lazy</i></p>
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">other</span>:<a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></code> &mdash; collection to be chained with this
+		 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code><a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></code> &mdash; collection which contains items of both this and other collections
+		 </td></tr></table></div><a name="clear()"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">clear</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function clear():void</code><p></p><p></p><p>
+		 
+		 remove all items from the list
+		 </p></div><a name="cycled()"></a><a name="cycled(Function)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">cycled</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>override public function cycled(nextCycle:Function = null):<a href="../../../../vm/miix/grit/collection/IIterator.html">IIterator</a></code><p></p><p></p><p>
+		 returns iterator from copied immutable collection
+		 <p><i>eager</i></p>
+		 
+		 infinite cycling iterating.
+		 Iteration is reversed when reaching collection end (or start).
+		 <code>nextCycle</code> is called each time when next cycle is started.
+		 If <code>nextCycle</code> returns <code>false</code> iterations will be completed from this point in both directions.
+		 If <code>nextCycle</code> == <code>null</code> iterations are infinite
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">nextCycle</span>:Function</code> (default = <code>null</code>)<code></code> &mdash; 	 <div class="listing" version="3.0"><pre> function nextCycle() : Boolean; </pre></div>
+		 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code><a href="../../../../vm/miix/grit/collection/IIterator.html">IIterator</a></code> &mdash; iterator for cycled iteration of the collection
+		 </td></tr></table></div><a name="filter()"></a><a name="filter(Function)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">filter</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>override public function filter(filtering:Function):<a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></code><p></p><p></p><p>
+		 returns copied immutable collection
+		 <p><i>eager</i></p>
+		 
+		 produces new collection with elements meet predicate function <code>filtering</code>
+		 <p><i>lazy</i></p>
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">filtering</span>:Function</code> &mdash; predicate function, have to return <code>true</code>
+		 if item is to be added to returned collection and <code>false</code> otherwise
+		 <div class="listing" version="3.0"><pre> function filtering( item : Object ) : Boolean; </pre></div>
+		 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code><a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></code> &mdash; collection with elements meet predicate function
+		 </td></tr></table></div><a name="itemTriggered()"></a><a name="itemTriggered(vm.miix.grit.collection.ListItem)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">itemTriggered</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function itemTriggered(listItem:ListItem):<a href="../../../../vm/miix/grit/trigger/ITriggered.html">ITriggered</a></code><p></p><p></p><p>
+		 returns trigerred for the list item
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">listItem</span>:ListItem</code> &mdash; item the triggered is looking for
+		 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code><a href="../../../../vm/miix/grit/trigger/ITriggered.html">ITriggered</a></code> &mdash; triggered to trigger specified item
+		 </td></tr></table></div><a name="lock()"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">lock</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function lock():void</code><p></p><p></p><p>
+		 
+		 lock the collection.
+		 Items removed / added to the collection are not actually removed / added, but not returned by iterators.
+		 To remove / add items call unlock. Lock / unlcok operations performed in pairs. Actual adding / removing
+		 are performed when unlock is called the same time as lock was called before.
+		 </p></div><a name="map()"></a><a name="map(Function)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">map</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>override public function map(mapping:Function):<a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></code><p></p><p></p><p>
+		 returns copied immutable collection
+		 <p><i>eager</i></p>
+		 
+		 produces new collection with elements mapped by <code>mapping</code> function
+		 <p><i>lazy</i></p>
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">mapping</span>:Function</code> &mdash; function have to return mapped or converted element to be contained in returned collection
+		 <div class="listing" version="3.0"><pre> function mapping( item : Object ) : Boolean; </pre></div>
+		 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code><a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></code> &mdash; collection with mapped elements
+		 </td></tr></table></div><a name="nextActive()"></a><a name="nextActive(vm.miix.grit.collection.ListItem)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">nextActive</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function nextActive(listItem:ListItem):ListItem</code><p></p><p></p><p>
+		 next active invluding listItem
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">listItem</span>:ListItem</code> &mdash; next to which active is looked for (including listItem)
+		 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>ListItem</code> &mdash; next (including listItem) active item
+		 </td></tr></table></div><a name="pop()"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">pop</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function pop():Object</code><p></p><p></p><p>
+		 
+		 remove last item from the collection and return it.
+		 </p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>Object</code> &mdash; last collection item (already removed) or null if doesn't exists
+		 </td></tr></table></div><a name="prevActive()"></a><a name="prevActive(vm.miix.grit.collection.ListItem)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">prevActive</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function prevActive(listItem:ListItem):ListItem</code><p></p><p></p><p>
+		 previous active invluding listItem
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">listItem</span>:ListItem</code> &mdash; previous to which active is looked for (including listItem)
+		 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>ListItem</code> &mdash; previous (including listItem) active item
+		 </td></tr></table></div><a name="push()"></a><a name="push(Object)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">push</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function push(item:Object):<a href="../../../../vm/miix/grit/trigger/ITriggered.html">ITriggered</a></code><p></p><p></p><p>
+		 
+		 add item at last position
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">item</span>:Object</code> &mdash; item to be added
+		 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code><a href="../../../../vm/miix/grit/trigger/ITriggered.html">ITriggered</a></code> &mdash; <code>triggered</code> to activate / deactivate and remove this item from the collection
+		 inactive items don't extracted by iterators
+		 </td></tr></table></div><a name="putBefore()"></a><a name="putBefore(Object,vm.miix.grit.collection.ListItem)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">putBefore</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function putBefore(item:Object, before:ListItem):<a href="../../../../vm/miix/grit/trigger/ITriggered.html">ITriggered</a></code><p></p><p></p><p>
+		 put new item before specified, if listItem is null put last
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">item</span>:Object</code> &mdash; item to be put
+		 </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">before</span>:ListItem</code> &mdash; new item is to be put before, if null new item is put last
+		 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code><a href="../../../../vm/miix/grit/trigger/ITriggered.html">ITriggered</a></code> &mdash; triggered for the newly addeditem
+		 </td></tr></table></div><a name="range()"></a><a name="range(int,int)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">range</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>override public function range(from:int, to:int):<a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></code><p></p><p></p><p>
+		 returns copied immutable collection
+		 <p><i>eager</i></p>
+		 
+		 produces a collection containing only items within specified range including ends
+		 <p><i>lazy</i></p>
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">from</span>:int</code> &mdash; range start
+		 </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">to</span>:int</code> &mdash; range end, if end is less than 0 items up to the end will be iterated
+		 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code><a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></code> &mdash; collection with items ithin specified range
+		 </td></tr></table></div><a name="removeItem()"></a><a name="removeItem(vm.miix.grit.collection.ListItem)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">removeItem</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function removeItem(listItem:ListItem):void</code><p></p><p></p><p>
+		 remove item if unlocked
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">listItem</span>:ListItem</code> &mdash; item to be removed
+		 </td></tr></table></p></div><a name="repeated()"></a><a name="repeated(Function)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">repeated</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>override public function repeated(nextCycle:Function = null):<a href="../../../../vm/miix/grit/collection/IIterator.html">IIterator</a></code><p></p><p></p><p>
+		 returns iterator from copied immutable collection
+		 <p><i>eager</i></p>
+		 
+		 infinite repeated iterating.
+		 Iteration begins from start when reaching end (or begins from end when reaching start for reverse iterations).
+		 <code>nextCycle</code> is called each time when next cycle is started.
+		 If <code>nextCycle</code> returns <code>false</code> iterations will be completed from this point in both directions.
+		 If <code>nextCycle</code> == <code>null</code> iterations are infinite
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">nextCycle</span>:Function</code> (default = <code>null</code>)<code></code> &mdash; 	 <div class="listing" version="3.0"><pre> function nextCycle() : Boolean; </pre></div>
+		 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code><a href="../../../../vm/miix/grit/collection/IIterator.html">IIterator</a></code> &mdash; iterator for cycled iteration of the collection
+		 </td></tr></table></div><a name="skip()"></a><a name="skip(int)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">skip</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>override public function skip(skipped:int):<a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></code><p></p><p></p><p>
+		 returns copied immutable collection
+		 <p><i>eager</i></p>
+		 
+		 produces a collection containing the items of this collection,
+		 after skipping the first <code>skipped</code> items produced by its iterator.
+		 If this collection does not contain more items than the specified number of items to skip,
+		 the resulting collection has no items.
+		 If the specified number of items to skip is zero or fewer,
+		 the resulting collection contains the same items as this collection.
+		 <p><i>lazy</i></p>
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">skipped</span>:int</code> &mdash; number of items to be skipped
+		 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code><a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></code> &mdash; collection with skipped first <code>skipped</code> items
+		 </td></tr></table></div><a name="take()"></a><a name="take(int)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">take</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>override public function take(taken:int):<a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></code><p></p><p></p><p>
+		 returns copied immutable collection
+		 <p><i>eager</i></p>
+		 
+		 produces a collection containing the first <code>taken</code> items of this collection.
+		 If the specified number of items to take is larger than the number of items of this collection,
+		 the resulting collection contains the same items as this collection.
+		 If the specified number of items to take is fewer than one, the resulting collection has no items.
+		 <p><i>lazy</i></p>
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">taken</span>:int</code> &mdash; number of items to be taken
+		 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code><a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></code> &mdash; collection containing first <code>taken</code> items
+		 </td></tr></table></div><a name="unlock()"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">unlock</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function unlock():void</code><p></p><p></p><p>
+		 
+		 unlock the collection.
+		 set collection unlocked and actualy add / removed items added / removed during locking
+		 </p></div><br/><br/><hr><br/><p></p><center class="copyright"><footer></footer><br/>Tue Jun 30 2015, 08:12 PM +04:00  </center></div></body></html><!--<br/>Tue Jun 30 2015, 08:12 PM +04:00  -->

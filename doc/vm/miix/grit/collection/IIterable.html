@@ -1,0 +1,214 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><!-- saved from url=(0014)about:internet --><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" href="../../../../style.css" type="text/css" media="screen"><link rel="stylesheet" href="../../../../print.css" type="text/css" media="print"><link rel="stylesheet" href="../../../../override.css" type="text/css"><meta name="keywords" content="IIterable,vm.miix.grit.collection.IIterable,_item,_key,_size,current,empty,empty,first,isLocked,item,items,items,items,iterator,iterator,iterator,iterator,iterator,key,keys,keys,keys,last,mutator,mutator,reversed,reversed,reversed,sequence,sequence,size,size,size,size,accept,accept,add,add,add,byKey,byKey,byKey,chain,chain,chain,clear,clear,clear,clone,clone,clone,cloneWith,contains,contains,contains,count,cycled,cycled,cycled,fillCollection,filter,filter,filter,findFirstItem,findFirstOccurrence,findFirstOccurrence,findFirstOccurrence,findLastItem,flipEnd,flipStart,forEach,forEachItem,forEachItem,forEachItem,forEachKeyItem,forEachKeyItem,forEachKeyItem,fromFinalVector,fromPairs,getAt,getAt,getAt,hasNext,hasPrevious,immutable,insert,intDecreasing,intIncreasing,interpolateNumber,invoke,invoke,invoke,invokeWith,item,itemTriggered,lock,lock,map,map,map,next,nextActive,numberDecreasing,numberIncreasing,pop,pop,prevActive,previous,push,push,putBefore,putBefore,range,range,range,remove,remove,removeItem,repeated,repeated,repeated,skip,skip,skip,sort,step,step,stringDecreasing,stringIncreasing,take,take,take,toString,uintDecreasing,uintIncreasing,unlock,unlock,unlock,zip"><title>vm.miix.grit.collection.IIterable</title></head><body><script language="javascript" type="text/javascript" src="../../../../asdoc.js"></script><script language="javascript" type="text/javascript" src="../../../../help.js"></script><script language="javascript" type="text/javascript" src="../../../../cookies.js"></script><script language="javascript" type="text/javascript"><!--
+				asdocTitle = 'IIterable - API Documentation';
+				var baseRef = '../../../../';
+				window.onload = configPage;
+			--></script>
+<script type="text/javascript">
+			scrollToNameAnchor();
+		</script><table class="titleTable" cellpadding="0" cellspacing="0" id="titleTable" style="display:none"><tr><td class="titleTableTitle" align="left">Grit - as3 reactive asynchronous library</td><td class="titleTableTopNav" align="right"><a href="../../../../package-summary.html" onclick="loadClassListFrame('../../../../all-classes.html')">All Packages</a>&nbsp;|&nbsp;<a href="../../../../class-summary.html" onclick="loadClassListFrame('../../../../all-classes.html')">All Classes</a>&nbsp;|&nbsp;<a href="../../../../all-index-A.html" onclick="loadClassListFrame('../../../../index-list.html')">Index</a>&nbsp;|&nbsp;<a id="framesLink1" href="../../../../index.html?vm/miix/grit/collection/IIterable.html&amp;vm/miix/grit/collection/class-list.html">Frames</a><a id="noFramesLink1" style="display:none" href="" onclick="parent.location=document.location"> No Frames </a></td><td class="titleTableLogo" align="right" rowspan="3"><img src="../../../../images/logo.jpg" class="logoImage" alt=" Adobe Logo " title=" Adobe Logo "></td></tr><tr class="titleTableRow2"><td class="titleTableSubTitle" id="subTitle" align="left">IIterable</td><td class="titleTableSubNav" id="subNav" align="right"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td></tr><tr class="titleTableRow3"><td colspan="3">&nbsp;</td></tr></table><script language="javascript" type="text/javascript" xml:space="preserve">
+				<!--
+				
+					if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("IIterable"); titleBar_setSubNav(false,true,false,false,false,false,false,false,true,false,false	,false,false,false,false,false);}	
+				-->
+			</script><div xmlns:fn="http://www.w3.org/2005/xpath-functions" class="MainContent"><table class="classHeaderTable" cellpadding="0" cellspacing="0"><tr><td class="classHeaderTableLabel">Package</td><td><a href="package-detail.html" onclick="javascript:loadClassListFrame('class-list.html')">vm.miix.grit.collection</a></td></tr><tr><td class="classHeaderTableLabel">Interface</td><td class="classSignature">public  interface  IIterable</td></tr></table><p></p><p></p><p></p>
+	 iterable collection
+	 following methods may not produce new collection but just refers to the current collection (lazy operation):
+	   <ul>
+	                 <li>
+                     <code>reversed</code>
+                  </li>
+	                 <li>
+                     <code>sequence</code>
+                  </li>
+	                 <li>
+                     <code>filter</code>
+                  </li>
+	                 <li>
+                     <code>chain</code>
+                  </li>
+	                 <li>
+                     <code>map</code>
+                  </li>
+	                 <li>
+                     <code>range</code>
+                  </li>
+	                 <li>
+                     <code>skip</code>
+                  </li>
+	                 <li>
+                     <code>take</code>
+                  </li>
+	              </ul>
+	              <p>
+	   Use <code>clone</code> to produce new collection with the same items as current has.
+	   Sorting with <code>sort</code> function always produce new collection (eager operation).
+	   </p>
+	           <p></p><p><span class="classHeaderTableLabel">See also</span></p><div class="seeAlso"><a href="Collection.html" target="">vm.miix.grit.collection.Collection</a><br/><a href="IIterator.html" target="">vm.miix.grit.collection.IIterator</a></div><br/><hr></div><a name="propertySummary"></a><div class="summarySection"><div class="summaryTableTitle">Public Properties</div><table cellspacing="0" cellpadding="3" class="summaryTable " id="summaryTableProperty"><tr><th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined By</th></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#empty" class="signatureLink">empty</a> : Boolean<div class="summaryTableDescription">[read-only] 
+		 true if collection is empty and false otherwise
+		 </div></td><td class="summaryTableOwnerCol">IIterable</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#iterator" class="signatureLink">iterator</a> : <a href="../../../../vm/miix/grit/collection/IIterator.html">IIterator</a><div class="summaryTableDescription">[read-only] 
+		 iterating collection using iterator
+		 </div></td><td class="summaryTableOwnerCol">IIterable</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#reversed" class="signatureLink">reversed</a> : <a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a><div class="summaryTableDescription">[read-only] 
+		 collection contained the same elements but in reverse order
+		 lazy
+		 </div></td><td class="summaryTableOwnerCol">IIterable</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#sequence" class="signatureLink">sequence</a> : <a href="../../../../vm/miix/grit/collection/IIndexed.html">IIndexed</a><div class="summaryTableDescription">[read-only] 
+		 sequence, which can be iterated by index
+		 eager or lazy depending on collection nature
+		 </div></td><td class="summaryTableOwnerCol">IIterable</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a href="#size" class="signatureLink">size</a> : int<div class="summaryTableDescription">[read-only] 
+		 total number of elements in the collection, may requires collection iteration
+		 </div></td><td class="summaryTableOwnerCol">IIterable</td></tr></table></div><a name="methodSummary"></a><div class="summarySection"><div class="summaryTableTitle">Public Methods </div><table cellspacing="0" cellpadding="3" class="summaryTable " id="summaryTableMethod"><tr><th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined By</th></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#chain()" class="signatureLink">chain</a>(other:<a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a>):<a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></div><div class="summaryTableDescription">
+		 produces a collection which contains items of this collection, in the order in which they occur in this collection,
+		 followed by the items of the other collection in the order in which they occur in the other collection.</div></td><td class="summaryTableOwnerCol">IIterable</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#clone()" class="signatureLink">clone</a>():<a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></div><div class="summaryTableDescription">
+		 clone the current collection
+		 lazy or eager depending if collection contains items directly or as filtered, mapped etc
+		 </div></td><td class="summaryTableOwnerCol">IIterable</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#cloneWith()" class="signatureLink">cloneWith</a>(cloneItem:Function):<a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></div><div class="summaryTableDescription">
+		 produces new collection with items cloned using cloneItem function.</div></td><td class="summaryTableOwnerCol">IIterable</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#count()" class="signatureLink">count</a>(selecting:Function):int</div><div class="summaryTableDescription">
+		 counting of items returned by predicate function selecting
+		 </div></td><td class="summaryTableOwnerCol">IIterable</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#cycled()" class="signatureLink">cycled</a>(nextCycle:Function = null):<a href="../../../../vm/miix/grit/collection/IIterator.html">IIterator</a></div><div class="summaryTableDescription">
+		 infinite cycling iterating.</div></td><td class="summaryTableOwnerCol">IIterable</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#filter()" class="signatureLink">filter</a>(filtering:Function):<a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></div><div class="summaryTableDescription">
+		 produces new collection with elements meet predicate function filtering
+		 lazy
+		 </div></td><td class="summaryTableOwnerCol">IIterable</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#findFirstItem()" class="signatureLink">findFirstItem</a>(predicate:Function):Object</div><div class="summaryTableDescription">
+		 find first item meets predicate function
+		 </div></td><td class="summaryTableOwnerCol">IIterable</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#findLastItem()" class="signatureLink">findLastItem</a>(predicate:Function):Object</div><div class="summaryTableDescription">
+		 find last item meets predicate function
+		 </div></td><td class="summaryTableOwnerCol">IIterable</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#forEach()" class="signatureLink">forEach</a>(perform:Function):void</div><div class="summaryTableDescription">
+		 calls specified funcion for each item in the collection
+		 </div></td><td class="summaryTableOwnerCol">IIterable</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#map()" class="signatureLink">map</a>(mapping:Function):<a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></div><div class="summaryTableDescription">
+		 produces new collection with elements mapped by mapping function
+		 lazy
+		 </div></td><td class="summaryTableOwnerCol">IIterable</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#range()" class="signatureLink">range</a>(from:int, to:int):<a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></div><div class="summaryTableDescription">
+		 produces a collection containing only items within specified range including ends
+		 lazy
+		 </div></td><td class="summaryTableOwnerCol">IIterable</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#repeated()" class="signatureLink">repeated</a>(nextCycle:Function = null):<a href="../../../../vm/miix/grit/collection/IIterator.html">IIterator</a></div><div class="summaryTableDescription">
+		 infinite repeated iterating.</div></td><td class="summaryTableOwnerCol">IIterable</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#skip()" class="signatureLink">skip</a>(skipped:int):<a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></div><div class="summaryTableDescription">
+		 produces a collection containing the items of this collection,
+		 after skipping the first skipped items produced by its iterator.</div></td><td class="summaryTableOwnerCol">IIterable</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#sort()" class="signatureLink">sort</a>(compare:Function):<a href="../../../../vm/miix/grit/collection/IIndexed.html">IIndexed</a></div><div class="summaryTableDescription">
+		 produce new collection containing items of this collection sorted according to comparator function
+		 eager by nature
+		 </div></td><td class="summaryTableOwnerCol">IIterable</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#take()" class="signatureLink">take</a>(taken:int):<a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></div><div class="summaryTableDescription">
+		 produces a collection containing the first taken items of this collection.</div></td><td class="summaryTableOwnerCol">IIterable</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#zip()" class="signatureLink">zip</a>(other:<a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a>, paired:Function):void</div><div class="summaryTableDescription">
+		 zip this iterable with another.</div></td><td class="summaryTableOwnerCol">IIterable</td></tr></table></div><script language="javascript" type="text/javascript"><!--
+										showHideInherited();
+										--></script><div class="MainContent"><div class="detailSectionHeader">Property Detail</div><a name="propertyDetail"></a><a name="empty"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">empty</td><td class="detailHeaderType">property</td></tr></table><div class="detailBody"><code>empty:Boolean</code>&nbsp;&nbsp;[read-only] <p></p><p></p><p>
+		 <code>true</code> if collection is empty and <code>false</code> otherwise
+		 </p><br/><span class="label"> Implementation </span><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function get empty():Boolean</code><br/></div><a name="propertyDetail"></a><a name="iterator"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">iterator</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>iterator:<a href="../../../../vm/miix/grit/collection/IIterator.html">IIterator</a></code>&nbsp;&nbsp;[read-only] <p></p><p></p><p>
+		 iterating collection using iterator
+		 </p><br/><span class="label"> Implementation </span><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function get iterator():<a href="../../../../vm/miix/grit/collection/IIterator.html">IIterator</a></code><br/></div><a name="propertyDetail"></a><a name="reversed"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">reversed</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>reversed:<a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></code>&nbsp;&nbsp;[read-only] <p></p><p></p><p>
+		 collection contained the same elements but in reverse order
+		 <p><i>lazy</i></p>
+		 </p><br/><span class="label"> Implementation </span><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function get reversed():<a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></code><br/></div><a name="propertyDetail"></a><a name="sequence"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">sequence</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>sequence:<a href="../../../../vm/miix/grit/collection/IIndexed.html">IIndexed</a></code>&nbsp;&nbsp;[read-only] <p></p><p></p><p>
+		 sequence, which can be iterated by index
+		 <p><i>eager or lazy</i></p> depending on collection nature
+		 </p><br/><span class="label"> Implementation </span><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function get sequence():<a href="../../../../vm/miix/grit/collection/IIndexed.html">IIndexed</a></code><br/></div><a name="propertyDetail"></a><a name="size"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">size</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code>size:int</code>&nbsp;&nbsp;[read-only] <p></p><p></p><p>
+		 total number of elements in the collection, may requires collection iteration
+		 </p><br/><span class="label"> Implementation </span><br/><code>&nbsp;&nbsp;&nbsp;&nbsp;public function get size():int</code><br/></div><a name="methodDetail"></a><div class="detailSectionHeader">Method Detail</div><a name="chain()"></a><a name="chain(vm.miix.grit.collection.IIterable)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">chain</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td></tr></table><div class="detailBody"><code> public function chain(other:<a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a>):<a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></code><p></p><p></p><p>
+		 produces a collection which contains items of this collection, in the order in which they occur in this collection,
+		 followed by the items of the other collection in the order in which they occur in the other collection.
+		 <p><i>lazy</i></p>
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">other</span>:<a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></code> &mdash; collection to be chained with this
+		 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code><a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></code> &mdash; collection which contains items of both this and other collections
+		 </td></tr></table></div><a name="clone()"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">clone</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function clone():<a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></code><p></p><p></p><p>
+		 clone the current collection
+		 <p><i>lazy or eager</i></p> depending if collection contains items directly or as filtered, mapped etc
+		 </p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code><a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></code> &mdash; new collection with the same items and in the same order as current has
+		 </td></tr></table></div><a name="cloneWith()"></a><a name="cloneWith(Function)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">cloneWith</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function cloneWith(cloneItem:Function):<a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></code><p></p><p></p><p>
+		 produces new collection with items cloned using <code>cloneItem</code> function.
+		 Since items are potentially mutable, this operation can provide some save mutable operations
+		 <p><i>eager</i></p>
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">cloneItem</span>:Function</code> &mdash; item cloning - takes an item and returns its copy (or may be another mapped item)
+		 <div class="listing" version="3.0"><pre> function cloneItem( item : Object ) : Object; </pre></div>
+		 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code><a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></code> &mdash; new collection with items cloned using <code>cloneItem</code> function
+		 </td></tr></table></div><a name="count()"></a><a name="count(Function)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">count</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function count(selecting:Function):int</code><p></p><p></p><p>
+		 counting of items returned by predicate function <code>selecting</code>
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">selecting</span>:Function</code> &mdash; predicate function
+		 <div class="listing" version="3.0"><pre> function selecting( item : Object ) : Boolean; </pre></div>
+		 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>int</code> &mdash; number of elements meet predicate function
+		 </td></tr></table></div><a name="cycled()"></a><a name="cycled(Function)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">cycled</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function cycled(nextCycle:Function = null):<a href="../../../../vm/miix/grit/collection/IIterator.html">IIterator</a></code><p></p><p></p><p>
+		 infinite cycling iterating.
+		 Iteration is reversed when reaching collection end (or start).
+		 <code>nextCycle</code> is called each time when next cycle is started.
+		 If <code>nextCycle</code> returns <code>false</code> iterations will be completed from this point in both directions.
+		 If <code>nextCycle</code> == <code>null</code> iterations are infinite
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">nextCycle</span>:Function</code> (default = <code>null</code>)<code></code> &mdash; 	 <div class="listing" version="3.0"><pre> function nextCycle() : Boolean; </pre></div>
+		 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code><a href="../../../../vm/miix/grit/collection/IIterator.html">IIterator</a></code> &mdash; iterator for cycled iteration of the collection
+		 </td></tr></table></div><a name="filter()"></a><a name="filter(Function)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">filter</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function filter(filtering:Function):<a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></code><p></p><p></p><p>
+		 produces new collection with elements meet predicate function <code>filtering</code>
+		 <p><i>lazy</i></p>
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">filtering</span>:Function</code> &mdash; predicate function, have to return <code>true</code>
+		 if item is to be added to returned collection and <code>false</code> otherwise
+		 <div class="listing" version="3.0"><pre> function filtering( item : Object ) : Boolean; </pre></div>
+		 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code><a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></code> &mdash; collection with elements meet predicate function
+		 </td></tr></table></div><a name="findFirstItem()"></a><a name="findFirstItem(Function)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">findFirstItem</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function findFirstItem(predicate:Function):Object</code><p></p><p></p><p>
+		 find first item meets <code>predicate</code> function
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">predicate</span>:Function</code> &mdash; function to check if object meets required.
+		 Must return true if object meets and false otherwise
+		 <div class="listing"><pre>function predicate( item : Object ) : Boolean</pre></div>
+		 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>Object</code> &mdash; first object which meets <code>predicate</code> function or null if object hasn't been found
+		 </td></tr></table></div><a name="findLastItem()"></a><a name="findLastItem(Function)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">findLastItem</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function findLastItem(predicate:Function):Object</code><p></p><p></p><p>
+		 find last item meets <code>predicate</code> function
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">predicate</span>:Function</code> &mdash; function to check if object meets required.
+		 Must return true if object meets and false otherwise
+		 <div class="listing"><pre>function predicate( item : Object ) : Boolean</pre></div>
+		 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>Object</code> &mdash; last object which meets <code>predicate</code> function or null if object hasn't been found
+		 </td></tr></table></div><a name="forEach()"></a><a name="forEach(Function)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">forEach</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function forEach(perform:Function):void</code><p></p><p></p><p>
+		 calls specified funcion for each item in the collection
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">perform</span>:Function</code> &mdash; function called for each item in the collection
+		 <div class="listing" version="3.0"><pre> function perform( item : Object ) : void; </pre></div>
+		 </td></tr></table></p></div><a name="map()"></a><a name="map(Function)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">map</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function map(mapping:Function):<a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></code><p></p><p></p><p>
+		 produces new collection with elements mapped by <code>mapping</code> function
+		 <p><i>lazy</i></p>
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">mapping</span>:Function</code> &mdash; function have to return mapped or converted element to be contained in returned collection
+		 <div class="listing" version="3.0"><pre> function mapping( item : Object ) : Boolean; </pre></div>
+		 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code><a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></code> &mdash; collection with mapped elements
+		 </td></tr></table></div><a name="range()"></a><a name="range(int,int)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">range</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function range(from:int, to:int):<a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></code><p></p><p></p><p>
+		 produces a collection containing only items within specified range including ends
+		 <p><i>lazy</i></p>
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">from</span>:int</code> &mdash; range start
+		 </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">to</span>:int</code> &mdash; range end, if end is less than 0 items up to the end will be iterated
+		 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code><a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></code> &mdash; collection with items ithin specified range
+		 </td></tr></table></div><a name="repeated()"></a><a name="repeated(Function)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">repeated</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function repeated(nextCycle:Function = null):<a href="../../../../vm/miix/grit/collection/IIterator.html">IIterator</a></code><p></p><p></p><p>
+		 infinite repeated iterating.
+		 Iteration begins from start when reaching end (or begins from end when reaching start for reverse iterations).
+		 <code>nextCycle</code> is called each time when next cycle is started.
+		 If <code>nextCycle</code> returns <code>false</code> iterations will be completed from this point in both directions.
+		 If <code>nextCycle</code> == <code>null</code> iterations are infinite
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">nextCycle</span>:Function</code> (default = <code>null</code>)<code></code> &mdash; 	 <div class="listing" version="3.0"><pre> function nextCycle() : Boolean; </pre></div>
+		 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code><a href="../../../../vm/miix/grit/collection/IIterator.html">IIterator</a></code> &mdash; iterator for cycled iteration of the collection
+		 </td></tr></table></div><a name="skip()"></a><a name="skip(int)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">skip</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function skip(skipped:int):<a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></code><p></p><p></p><p>
+		 produces a collection containing the items of this collection,
+		 after skipping the first <code>skipped</code> items produced by its iterator.
+		 If this collection does not contain more items than the specified number of items to skip,
+		 the resulting collection has no items.
+		 If the specified number of items to skip is zero or fewer,
+		 the resulting collection contains the same items as this collection.
+		 <p><i>lazy</i></p>
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">skipped</span>:int</code> &mdash; number of items to be skipped
+		 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code><a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></code> &mdash; collection with skipped first <code>skipped</code> items
+		 </td></tr></table></div><a name="sort()"></a><a name="sort(Function)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">sort</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function sort(compare:Function):<a href="../../../../vm/miix/grit/collection/IIndexed.html">IIndexed</a></code><p></p><p></p><p>
+		 produce new collection containing items of this collection sorted according to <code>comparator function</code>
+		 <p><i>eager</i></p> by nature
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">compare</span>:Function</code> &mdash; the function comparing a pair of items:
+			 <ul>
+				<li>if returns negaive value then first item is forward to second</li>
+				<li>if returns positive value then first item is backward to second</li>
+				<li>if returns zero value then first item is equal to second</li>
+			 </ul>
+		 <div class="listing" version="3.0"><pre> function compare( first : Object, second : Object ) : Number; </pre></div>
+		 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code><a href="../../../../vm/miix/grit/collection/IIndexed.html">IIndexed</a></code> &mdash; new collection with the same items as current but in sorted order
+		 </td></tr></table><p><span class="label">See also</span></p><div class="seeAlso"><a href="Comparison.html" target="">vm.miix.grit.collection.Comparison</a></div></div><a name="take()"></a><a name="take(int)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">take</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function take(taken:int):<a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></code><p></p><p></p><p>
+		 produces a collection containing the first <code>taken</code> items of this collection.
+		 If the specified number of items to take is larger than the number of items of this collection,
+		 the resulting collection contains the same items as this collection.
+		 If the specified number of items to take is fewer than one, the resulting collection has no items.
+		 <p><i>lazy</i></p>
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">taken</span>:int</code> &mdash; number of items to be taken
+		 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code><a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></code> &mdash; collection containing first <code>taken</code> items
+		 </td></tr></table></div><a name="zip()"></a><a name="zip(vm.miix.grit.collection.IIterable,Function)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">zip</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function zip(other:<a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a>, paired:Function):void</code><p></p><p></p><p>
+		 zip this iterable with another.
+		 function <code>paired</code> is called for each pair produced by this and <code>other</code> iterators simultaneously.
+		 If no item is produced by any of iterables, corresponding item in <code>paired</code> argument is set to null
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">other</span>:<a href="../../../../vm/miix/grit/collection/IIterable.html">IIterable</a></code> &mdash; iterable to be zipped with this
+		 </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">paired</span>:Function</code> &mdash; callback for each pair, first argument is item from this collection (or null if no) and
+		 second is from <code>other</code> collection
+		 <div class="listing" version="3.0"><pre> function paired( first : Object, second : Object ) : void; </pre></div>
+		 </td></tr></table></p></div><br/><br/><hr><br/><p></p><center class="copyright"><footer></footer><br/>Tue Jun 30 2015, 08:12 PM +04:00  </center></div></body></html><!--<br/>Tue Jun 30 2015, 08:12 PM +04:00  -->

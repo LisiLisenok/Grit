@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><!-- saved from url=(0014)about:internet --><!-- saved from url=(0014)about:internet --><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" href="../../../../style.css" type="text/css" media="screen"><link rel="stylesheet" href="../../../../print.css" type="text/css" media="print"><link rel="stylesheet" href="../../../../override.css" type="text/css"><title>vm.miix.grit.wire Summary</title></head><body><script language="javascript" type="text/javascript" src="../../../../asdoc.js"></script><script language="javascript" type="text/javascript" src="../../../../help.js"></script><script language="javascript" type="text/javascript" src="../../../../cookies.js"></script><script language="javascript" type="text/javascript"><!--
+				asdocTitle = 'vm.miix.grit.wire package - API Documentation';
+				var baseRef = '../../../../';
+				window.onload = configPage;
+			--></script>
+<script type="text/javascript">
+			scrollToNameAnchor();
+		</script><table class="titleTable" cellpadding="0" cellspacing="0" id="titleTable" style="display:none"><tr><td class="titleTableTitle" align="left">Grit - as3 reactive asynchronous library</td><td class="titleTableTopNav" align="right"><a href="../../../../package-summary.html" onclick="loadClassListFrame('../../../../all-classes.html')">All Packages</a>&nbsp;|&nbsp;<a href="../../../../class-summary.html" onclick="loadClassListFrame('../../../../all-classes.html')">All Classes</a>&nbsp;|&nbsp;<a href="../../../../all-index-A.html" onclick="loadClassListFrame('../../../../index-list.html')">Index</a>&nbsp;|&nbsp;<a id="framesLink1" href="../../../../index.html?vm/miix/grit/wire/package-detail.html&amp;vm/miix/grit/wire/class-list.html">Frames</a><a id="noFramesLink1" style="display:none" href="" onclick="parent.location=document.location"> No Frames </a></td><td class="titleTableLogo" align="right" rowspan="3"><img src="../../../../images/logo.jpg" class="logoImage" alt=" Adobe Logo " title=" Adobe Logo "></td></tr><tr class="titleTableRow2"><td class="titleTableSubTitle" id="subTitle" align="left">vm.miix.grit.wire</td><td class="titleTableSubNav" id="subNav" align="right"><a href="package-detail.html#interfaceSummary"> Interfaces </a>&nbsp;| <a href="package-detail.html#classSummary">Classes</a></td></tr><tr class="titleTableRow3"><td colspan="3">&nbsp;</td></tr></table><script language="javascript" type="text/javascript" xml:space="preserve">
+				<!--
+				
+					if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("vm.miix.grit.wire"); titleBar_setSubNav(false,false,false,false,false,false,false,false,false,false,false	,false,false,true,true,false);}	
+				-->
+			</script><div class="MainContent"><br><p> 
+                 
+					<p>
+					Provides capabilities to run some tasks on separated thread and exchange data between tasks
+					in asynchronous way. Only one additional to main thread is used to run any number of tasks.
+					Any task must satisfy <code>ITask</code> interface
+					and must run in non-blocking way to get another tasks be performed.
+					</p>
+					
+					<p>
+					The same swf bytecode is used to create separated thread.
+					</p>
+					
+					<p>
+					<code>IContext</code> is main interface on which tasks are run and connected to each other.
+					<code>GritWire</code> and <code>GritTask</code> manage threads, tasks and connections
+					and must be created at initialization like below:
+					<div class='listing'><pre>
+						public class Main extends Sprite {
+						
+							// main or sub-thread context
+							private var wireContext : IContext;
+		
+							public function Main() {
+								if ( Worker.current.isPrimordial ) {
+									if ( stage ) init();
+									else addEventListener( Event.ADDED_TO_STAGE, init );
+								}
+								else {
+									// secondary thread - instantiate GritTask as thread context
+									wireContext = new GritTask();
+								}
+							}
+							
+							private function init( e : Event = null ) : void {
+
+								removeEventListener( Event.ADDED_TO_STAGE, init );
+							
+								// primordial thread - instantiate GritWire as thread context
+								var wire : GritWire = new GritWire();
+								wireContext = wire;
+								
+								// start the grit
+								wire.start( loaderInfo.bytes ).onCompleted (
+									started, // function called when secondary thread is started
+									function ( reason : * ) : void { trace( reason ); }
+								);
+							}
+							
+							private function started( context : IContext ) : void {
+								// grit is started - deploy tasks, create connections etc
+							}
+							
+						}
+					</pre></div>
+					</p>
+					Grit operates by the following items:
+					<ul>
+					<li> <i> task </i> is something can be run on context. Whatever context
+						(GritWire or GritTask) the task is deployed, it is always run on secondary thread.
+						Only one additional to main thread is used to run any number of tasks.
+						So, any task must run in non-blocking way to get another tasks be performed.
+						Tasks may exchange data using servers, which allows to establish point-to-point connections
+						or shared bytes, which allows to exchange data using ByteArray with shared (common) memory </li>
+					<li> <i> server </i> allows to establish point-to-point connections.
+						Before using server must be registered within context - see IContext.registerServer().
+						To connect to server IContext.connect() is to be used. Server is notified when
+						connection is established and both sides receive <code>Messenger</code>
+						to send / receive data from another side. Any data send to / from server
+						must be serialized in AMF format </li>
+					<li> <i> sharedBytes </i> represents <code>ByteArray</code>
+						with memory shared between threads. Check-in / check-out procces is applied to get access to
+						SharedBytes. This quaranties the only one thread possesses sharedBytes at any time.
+						</li>
+					</ul>
+                 
+            </p><br><hr><a name="interfaceSummary"></a><div class="summaryTableTitle">Interfaces</div><table cellpadding="3" cellspacing="0" class="summaryTable"><tr><th>&nbsp;</th><th width="30%">Interface</th><th width="70%">Description</th></tr><tr class="prow1"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><i><a href="IContext.html">IContext</a></i></td><td class="summaryTableLastCol">
+	 grit context, tasks is run on.</td></tr><tr class="prow0"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><i><a href="ISharedBytes.html">ISharedBytes</a></i></td><td class="summaryTableLastCol">
+	 shared bytes - like ByteArray but contains checkOut capability
+	 
+	 read / write interfacies
+	 read / write position
+	 check out
+	 
+	 </td></tr><tr class="prow1"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><i><a href="ITask.html">ITask</a></i></td><td class="summaryTableLastCol">
+	 task runnable on a context
+	 </td></tr></table><a name="classSummary"></a><div class="summaryTableTitle">Classes</div><table cellpadding="3" cellspacing="0" class="summaryTable"><tr><th>&nbsp;</th><th width="30%">Class</th><th width="70%">Description</th></tr><tr class="prow1"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="Address.html">Address</a></td><td class="summaryTableLastCol">
+	 connection address.</td></tr><tr class="prow0"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="GritTask.html">GritTask</a></td><td class="summaryTableLastCol">
+	 grit task - is grit context within background worker.</td></tr><tr class="prow1"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="GritWire.html">GritWire</a></td><td class="summaryTableLastCol">
+	 main class of GritWire within main swf thread.</td></tr><tr class="prow0"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="ServerDescriptor.html">ServerDescriptor</a></td><td class="summaryTableLastCol">
+	 description of server.</td></tr><tr class="prow1"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="ServerTypes.html">ServerTypes</a></td><td class="summaryTableLastCol">
+	 static constants with server types.</td></tr></table><p></p><div><p></p><center class="copyright"><footer></footer><br/>Tue Jun 30 2015, 08:12 PM +04:00  </center></div></div></body></html><!--<br/>Tue Jun 30 2015, 08:12 PM +04:00  -->

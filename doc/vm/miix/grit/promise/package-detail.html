@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><!-- saved from url=(0014)about:internet --><!-- saved from url=(0014)about:internet --><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" href="../../../../style.css" type="text/css" media="screen"><link rel="stylesheet" href="../../../../print.css" type="text/css" media="print"><link rel="stylesheet" href="../../../../override.css" type="text/css"><title>vm.miix.grit.promise Summary</title></head><body><script language="javascript" type="text/javascript" src="../../../../asdoc.js"></script><script language="javascript" type="text/javascript" src="../../../../help.js"></script><script language="javascript" type="text/javascript" src="../../../../cookies.js"></script><script language="javascript" type="text/javascript"><!--
+				asdocTitle = 'vm.miix.grit.promise package - API Documentation';
+				var baseRef = '../../../../';
+				window.onload = configPage;
+			--></script>
+<script type="text/javascript">
+			scrollToNameAnchor();
+		</script><table class="titleTable" cellpadding="0" cellspacing="0" id="titleTable" style="display:none"><tr><td class="titleTableTitle" align="left">Grit - as3 reactive asynchronous library</td><td class="titleTableTopNav" align="right"><a href="../../../../package-summary.html" onclick="loadClassListFrame('../../../../all-classes.html')">All Packages</a>&nbsp;|&nbsp;<a href="../../../../class-summary.html" onclick="loadClassListFrame('../../../../all-classes.html')">All Classes</a>&nbsp;|&nbsp;<a href="../../../../all-index-A.html" onclick="loadClassListFrame('../../../../index-list.html')">Index</a>&nbsp;|&nbsp;<a id="framesLink1" href="../../../../index.html?vm/miix/grit/promise/package-detail.html&amp;vm/miix/grit/promise/class-list.html">Frames</a><a id="noFramesLink1" style="display:none" href="" onclick="parent.location=document.location"> No Frames </a></td><td class="titleTableLogo" align="right" rowspan="3"><img src="../../../../images/logo.jpg" class="logoImage" alt=" Adobe Logo " title=" Adobe Logo "></td></tr><tr class="titleTableRow2"><td class="titleTableSubTitle" id="subTitle" align="left">vm.miix.grit.promise</td><td class="titleTableSubNav" id="subNav" align="right"><a href="package-detail.html#interfaceSummary"> Interfaces </a>&nbsp;| <a href="package-detail.html#classSummary">Classes</a></td></tr><tr class="titleTableRow3"><td colspan="3">&nbsp;</td></tr></table><script language="javascript" type="text/javascript" xml:space="preserve">
+				<!--
+				
+					if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("vm.miix.grit.promise"); titleBar_setSubNav(false,false,false,false,false,false,false,false,false,false,false	,false,false,true,true,false);}	
+				-->
+			</script><div class="MainContent"><br><p> 
+                 					
+					<h1 align = left> Promise: </h1>
+					</p>
+						
+						<p>
+						<i>promise</i> represents a value that may not be available yet.
+						If an operation cannot return a value immediately without blocking,
+						it may instead return a <code>promise</code> of the value.
+						<p> A <code>promise</code> exists in one of three states:
+						<ul>
+							<li>in the promised state, the operation has not yet terminated</li>
+							<li>in the fulfilled or resolved state, the operation has produced a value</li>
+							<li>in the rejected state, the operation has terminated without producing a value</li>
+						</ul>
+						<code>Promise</code> is similar to <code>emitter</code>
+						but there are several differencies:
+						<ul>
+						<li> <code>promise</code> emits value only once, while <code>emitter</code> can emit a stream or a train of values </li>
+						<li> <code>emitter</code> provides triggered capabilities both itself and for subscribers,
+							while subscription on <code>promise</code> cann't be canceled or paused </li>
+						<li> <code>promise</code> has a litle more capabilities and is more convenient
+							for managing, mapping and combining operations </li>
+						</ul>
+						</p>
+						
+						<h3 align = left>General interfecies: </h3>
+						<p>
+						<ul>
+							<li> <code>IPromisable</code> association and operations with a promise </li>
+							<li> <code>IPromise</code> promise itself, is <code>IPromisable</code> </li>
+							<li> <code>IResolver</code> resolves or rejects associated promise, is <code>IPromisable</code> </li>
+						</ul>
+						</p>
+						
+						<h3 align = left>Promise factory</h3>
+						<p>
+						<code>Deferred</code> class is a factory that provides an instance of the <code>promise</code> and manages its lifecycle, providing operations to force its transition to a resolved or rejected state.
+							Each <code>Deferred</code> object manages only one promise and implements all
+						<code>IPromisable</code>, <code>IPromise</code> and <code>IResolver</code> interfacies
+						</p>
+						<p>
+							If it is undesirable to provide recipients with all <code>Deferred</code> capabilities
+							only objects with <code>IPromise</code> or <code>IResolver</code> interfacies can be extracted.
+						</p>
+						<p>
+							It is recommended that long-term operation retruns <code>Deferred.promise</code>
+							if only subscription is allowed outside the operation.
+							Or <code>Deferred.resolver</code> if the operation must be resolved outside
+						</p>
+						
+						<h3 align = left>Promise lifecycle </h3>
+						<p>
+						<code>IResolver</code> interface provides two methods for controlling state of the promise:
+						<ul>
+							<li> <code>resolve</code> resolves the promise with provided value </li>
+							<li> <code>reject</code> rejects the promise with provided reason </li>
+						</ul>
+						
+						<code>IResolver</code> can be resolved with another <code>promise</code>
+						(actually resolves with value resolves this submitted <code>promise</code>)
+						or with <code>emitter</code> (actually resolves with the first emitted value)
+						
+						<p>
+							<code>Deferred</code> object has resolver attribute, which helps to hide
+							<code>Deferred</code> capabilities from recipients.
+						</p>
+						</p>
+						
+						<h3 align = left>Promise operations </h3>						
+						
+						<p>
+						The method <code>onCompleted()</code> allows interested parties to be notified when the promise makes a
+						transition from the promised state to the resolved or the rejected state.
+						The method returns new <code>promise</code>, which will be resolved with
+						value returned by subscriber or will be rejected with the same reason as current <code>promise</code>.
+						So, the promises can be chained one to another.
+						</p>
+						
+						<p>
+						<code>IPromisable</code> interface provides following operations with <code>promise</code>:
+						<ul>
+							<li> <code>compose</code> is resolving the promise by exactly the same value as resolved
+								by another <code>promise</code> </li>
+							<li> <code>mapping</code> is resolving the promise with mapped value resolved by another
+								<code>promise</code> </li>
+							<li> <code>and</code> is combination of two <code>promises</code> into one,
+								which is resolved by some combination (provided by specified function) of values resolved by that promises. </li>
+						</ul>
+						</p>
+						
+						<p>
+						<h3 align = left>Example </h3>						
+						<div class='listing'><pre>
+							var deferred1 : Deferred = new Deferred();
+							var deferred2 : Deferred = new Deferred();
+							var promise : IPromise = deferred1.and (
+										deferred2,
+										function ( i : int, j : int ) : int {
+											return i + j; 
+										}
+									)
+								.onCompleted (
+										function ( i : int ) : int {
+											trace( "resolved with", i ); return 10 * i
+										}
+									);
+							promise.onCompleted (
+									function ( i : int ) : void {
+										trace( "the last in chain is resolved with", i );
+									}
+								);
+							return promise;
+							
+							<p>
+							-----------------
+							</p>
+							
+							deffered1.resolve( 33 );
+							deffered2.resolve( 22 );
+						</pre></div>
+						</p>
+					</p>
+                 
+            </p><br><hr><a name="interfaceSummary"></a><div class="summaryTableTitle">Interfaces</div><table cellpadding="3" cellspacing="0" class="summaryTable"><tr><th>&nbsp;</th><th width="30%">Interface</th><th width="70%">Description</th></tr><tr class="prow1"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><i><a href="IPromisable.html">IPromisable</a></i></td><td class="summaryTableLastCol">
+	 operations with a promise
+	 </td></tr><tr class="prow0"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><i><a href="IPromise.html">IPromise</a></i></td><td class="summaryTableLastCol">
+	 promise represents a value that may not be available yet.</td></tr><tr class="prow1"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><i><a href="IResolver.html">IResolver</a></i></td><td class="summaryTableLastCol">
+	 resolver - resolves or rejects associated promise
+	 </td></tr></table><a name="classSummary"></a><div class="summaryTableTitle">Classes</div><table cellpadding="3" cellspacing="0" class="summaryTable"><tr><th>&nbsp;</th><th width="30%">Class</th><th width="70%">Description</th></tr><tr class="prow1"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="Deferred.html">Deferred</a></td><td class="summaryTableLastCol">
+	 provides an instance of the promise and manages its lifecycle.</td></tr></table><p></p><div><p></p><center class="copyright"><footer></footer><br/>Tue Jun 30 2015, 08:12 PM +04:00  </center></div></div></body></html><!--<br/>Tue Jun 30 2015, 08:12 PM +04:00  -->

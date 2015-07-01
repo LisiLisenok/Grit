@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><!-- saved from url=(0014)about:internet --><!-- saved from url=(0014)about:internet --><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" href="../../../../style.css" type="text/css" media="screen"><link rel="stylesheet" href="../../../../print.css" type="text/css" media="print"><link rel="stylesheet" href="../../../../override.css" type="text/css"><title>vm.miix.grit.collection Summary</title></head><body><script language="javascript" type="text/javascript" src="../../../../asdoc.js"></script><script language="javascript" type="text/javascript" src="../../../../help.js"></script><script language="javascript" type="text/javascript" src="../../../../cookies.js"></script><script language="javascript" type="text/javascript"><!--
+				asdocTitle = 'vm.miix.grit.collection package - API Documentation';
+				var baseRef = '../../../../';
+				window.onload = configPage;
+			--></script>
+<script type="text/javascript">
+			scrollToNameAnchor();
+		</script><table class="titleTable" cellpadding="0" cellspacing="0" id="titleTable" style="display:none"><tr><td class="titleTableTitle" align="left">Grit - as3 reactive asynchronous library</td><td class="titleTableTopNav" align="right"><a href="../../../../package-summary.html" onclick="loadClassListFrame('../../../../all-classes.html')">All Packages</a>&nbsp;|&nbsp;<a href="../../../../class-summary.html" onclick="loadClassListFrame('../../../../all-classes.html')">All Classes</a>&nbsp;|&nbsp;<a href="../../../../all-index-A.html" onclick="loadClassListFrame('../../../../index-list.html')">Index</a>&nbsp;|&nbsp;<a id="framesLink1" href="../../../../index.html?vm/miix/grit/collection/package-detail.html&amp;vm/miix/grit/collection/class-list.html">Frames</a><a id="noFramesLink1" style="display:none" href="" onclick="parent.location=document.location"> No Frames </a></td><td class="titleTableLogo" align="right" rowspan="3"><img src="../../../../images/logo.jpg" class="logoImage" alt=" Adobe Logo " title=" Adobe Logo "></td></tr><tr class="titleTableRow2"><td class="titleTableSubTitle" id="subTitle" align="left">vm.miix.grit.collection</td><td class="titleTableSubNav" id="subNav" align="right"><a href="package-detail.html#interfaceSummary"> Interfaces </a>&nbsp;| <a href="package-detail.html#classSummary">Classes</a></td></tr><tr class="titleTableRow3"><td colspan="3">&nbsp;</td></tr></table><script language="javascript" type="text/javascript" xml:space="preserve">
+				<!--
+				
+					if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("vm.miix.grit.collection"); titleBar_setSubNav(false,false,false,false,false,false,false,false,false,false,false	,false,false,true,true,false);}	
+				-->
+			</script><div class="MainContent"><br><p> 
+                 
+					<p>
+						<h1 align = left> Collections </h1>
+					</p>
+					<p>
+						Collections are iterable entities with iterations based on <code>Iterator</code>,
+						which allows to extract items from the collection one-by-one.
+					</p>
+					
+					<p>
+						Example:
+						<div class='listing'><pre>
+							var collection : Collection = new Collection( [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] );
+							var iterator : IIterator = collection.iterator;
+							while ( iterator.hasNext ) {
+								trace( iter.next() );
+							}
+						</pre></div>
+					</p>
+					
+					<p>
+						collection can be:
+						<ul>
+						<li> <i>immutable</i> contains the same number of the same referencies at any time </li>
+						<li> <i>mutable</i> items can be added / removed at any time </li>
+						</ul>
+					</p>
+					
+					<p>
+						<h1 align = left> Immutable collections </h1>
+					</p>
+					
+					<p>
+						contains the same number of the same referencies at any time.
+						Any immutable collection may be fulfilled only in constructor.
+						At the same time elements within any immutable collection can be mutable.						
+					</p>
+					
+					<p>
+						Iterable and its subtypes define various operations that return other iterable objects.
+						Such operations come in two flavors:
+						
+						<ul>
+						<li> <i>Lazy</i> operations return a view of the receiving iterable object.
+							Lazy operations are usually efficient, avoiding memory allocation or iteration of the receiving iterable object</li>
+						<li> <i>Eager</i> operations return new immutable collection. Eager operations are often expensive,
+							involving memory allocation and iteration of the receiving iterable object</li>
+						</ul>
+					</p>
+						
+					<p>
+						Lazy operations can be efficiently chained. For example:
+						<div class='listing'><pre>
+							var collection : Collection = new Collection (
+								[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] );
+							
+							var iterator : IIterator = collection.range( 2, 9 ).filter (
+								function ( item : int ) : Boolean {
+									return item < 7;
+								} ).skip( 2 ).reversed.iterator;
+								
+							while ( iterator.hasNext ) {
+								trace( iterator.next() );
+							}
+						</pre></div>
+					</p>
+						
+					<p>
+						if a lot of operations chained together it may takes time to chain collection items, especially if
+						complex fllters or mappings are applied. In this case, collection may be clonned using 
+						<code>clone</code>, which produces new collection containing only items
+						(or referencies) returned by the current collection <code>iterator</code>.
+					</p>
+						
+					<p>
+						In order to make a deep copy with items cloned as well, <code>cloneWith</code>
+						method can be used. Also some items mapping can be applied via this method.
+					</p>
+					
+					<p>
+						Following immutable collections are available in the package:
+						<ul>
+							<li> <code>Collection</code> is <code>Iterable</code>
+								based on backgound vector and allows to iterate items using <code>Iterator</code>
+								as well as indexies </li>
+							<li> <code>Map</code> is a collection of Key->Item pairs,
+								where each Key maps to a one and only one Item </li>
+							<li> <code>FunctionMapSet</code>, which allows to store functions with a key
+								and invoke function corresponds to given key.
+								May be usefull to organize commad responders </li>
+						</ul>
+					</p>
+					
+					<p>
+					<h1 align = left> Mutable collections </h1>
+					</p>
+					
+					<p>
+					all mutable collection impelemts <code>ISet</code> interface, which adds mutablity to
+					<code>IIterable</code> interface 
+					</p>
+					
+					<p>
+						<code>mutator</code> conception is used to add / remove items to the mutable collection.
+						<code>Mutator</code> is <code>iterator</code> with add / remove item capabilities.
+						When items added / removed to collection, <code>iterator</code> can produce unexpected
+						results. To avoid this, any immutable collection can be locked.
+						<p>
+						If item is added in locked state, it is not actualy added but pushed to a stack.
+						Item is moved to a collection when collection transits to unlocked state.
+						</p>
+						<p>
+						If item is removed from a collection in locked state, iterator stops to extract this. But item is still
+						stored within collection. Actual removing is done when collection transits to unlocked state.
+						</p>
+						<p>
+						Item add methods return <code>triggered</code> object, which allows to cancel item
+						(remove it from the list) and activate / deactivate item. Deactivated item isn't returned
+						by <code>iterator</code>
+						</p>
+					</p>
+					
+					<p>
+						Following mutable collections are available in the package:
+						<ul>
+							<li> <code>List</code> is a linked list of items </li>
+							<li> <code>MapSet</code> is mutable map of key->item pairs.
+								<code>MapSet</code> doesn't implement <code>ISet</code> interface </li>
+							<li> <code>FunctionList</code>, which allows to store functions and invoke them in a series </li>
+							<li> <code>FunctionMapSet</code>, is mutable <code>Map</code> which allows to store functions and invoke them </li>
+						</ul>
+					</p>
+                 
+            </p><br><hr><a name="interfaceSummary"></a><div class="summaryTableTitle">Interfaces</div><table cellpadding="3" cellspacing="0" class="summaryTable"><tr><th>&nbsp;</th><th width="30%">Interface</th><th width="70%">Description</th></tr><tr class="prow1"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><i><a href="IIndexed.html">IIndexed</a></i></td><td class="summaryTableLastCol">
+	 indexed collection
+	 </td></tr><tr class="prow0"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><i><a href="IIterable.html">IIterable</a></i></td><td class="summaryTableLastCol">
+	 iterable collection
+	 following methods may not produce new collection but just refers to the current collection (lazy operation):
+	   
+	   reversed
+	   sequence
+	   filter
+	   chain
+	   map
+	   range
+	   skip
+	   take
+	   
+	   
+	   Use clone to produce new collection with the same items as current has.</td></tr><tr class="prow1"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><i><a href="IIterator.html">IIterator</a></i></td><td class="summaryTableLastCol">
+	 extract items from a collection in series
+	 </td></tr><tr class="prow0"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><i><a href="IMap.html">IMap</a></i></td><td class="summaryTableLastCol">
+	 Map represents a collection of Key-&#62;Item pairs, where each Key maps to a one and only one Item.</td></tr><tr class="prow1"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><i><a href="IMutator.html">IMutator</a></i></td><td class="summaryTableLastCol">
+	 mutate a collection
+	 </td></tr><tr class="prow0"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><i><a href="ISet.html">ISet</a></i></td><td class="summaryTableLastCol">
+	 set is a mutable collection.</td></tr><tr class="prow1"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><i><a href="IStep.html">IStep</a></i></td><td class="summaryTableLastCol">
+	 step used within interpolations.</td></tr></table><a name="classSummary"></a><div class="summaryTableTitle">Classes</div><table cellpadding="3" cellspacing="0" class="summaryTable"><tr><th>&nbsp;</th><th width="30%">Class</th><th width="70%">Description</th></tr><tr class="prow1"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="Collection.html">Collection</a></td><td class="summaryTableLastCol">
+	 immutable collection of potentialy mutable items.</td></tr><tr class="prow0"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="Comparison.html">Comparison</a></td><td class="summaryTableLastCol">
+	 comparison static functions.</td></tr><tr class="prow1"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="FunctionList.html">FunctionList</a></td><td class="summaryTableLastCol">
+	 list of functions
+	 </td></tr><tr class="prow0"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="FunctionMap.html">FunctionMap</a></td><td class="summaryTableLastCol">
+	 immutable map containing key-&#62;function pairs.</td></tr><tr class="prow1"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="FunctionMapSet.html">FunctionMapSet</a></td><td class="summaryTableLastCol">
+	 mutable map set containing key-&#62;function pairs.</td></tr><tr class="prow0"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="Interpolator.html">Interpolator</a></td><td class="summaryTableLastCol">
+	 interpolates objects with argument
+	 </td></tr><tr class="prow1"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="List.html">List</a></td><td class="summaryTableLastCol">
+	 dual-direction mutable linked list of items
+	 </td></tr><tr class="prow0"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="Map.html">Map</a></td><td class="summaryTableLastCol">
+	 immutable map as a collection of key-&#62;item pairs.</td></tr><tr class="prow1"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="MapSet.html">MapSet</a></td><td class="summaryTableLastCol">
+	 mutable map of key-&#62;item pairs.</td></tr><tr class="prow0"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="Pair.html">Pair</a></td><td class="summaryTableLastCol">
+	 pair of Key-&#62;Item
+	 </td></tr><tr class="prow1"><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableSecondCol"><a href="StepConst.html">StepConst</a></td><td class="summaryTableLastCol">
+	 constant step, can be used within Interpolator
+	 </td></tr></table><p></p><div><p></p><center class="copyright"><footer></footer><br/>Tue Jun 30 2015, 08:12 PM +04:00  </center></div></div></body></html><!--<br/>Tue Jun 30 2015, 08:12 PM +04:00  -->

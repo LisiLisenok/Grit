@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><!-- saved from url=(0014)about:internet --><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" href="../../../../style.css" type="text/css" media="screen"><link rel="stylesheet" href="../../../../print.css" type="text/css" media="print"><link rel="stylesheet" href="../../../../override.css" type="text/css"><meta name="keywords" content="GritWire,vm.miix.grit.wire.GritWire,checkInSharedBytes,checkInSharedBytes,checkInSharedBytes,checkOut,clear,clone,connect,connect,connect,createSharedBytes,createSharedBytes,createSharedBytes,deploy,deploy,deploy,readExternal,registerServer,registerServer,registerServer,run,start,toString,writeExternal"><title>vm.miix.grit.wire.GritWire</title><script src="../../../../AC_OETags.js" type="text/javascript"></script></head><body><script language="javascript" type="text/javascript" src="../../../../asdoc.js"></script><script language="javascript" type="text/javascript" src="../../../../help.js"></script><script language="javascript" type="text/javascript" src="../../../../cookies.js"></script><script language="javascript" type="text/javascript"><!--
+				asdocTitle = 'GritWire - API Documentation';
+				var baseRef = '../../../../';
+				window.onload = configPage;
+			--></script>
+<script type="text/javascript">
+			scrollToNameAnchor();
+		</script><table class="titleTable" cellpadding="0" cellspacing="0" id="titleTable" style="display:none"><tr><td class="titleTableTitle" align="left">Grit - as3 reactive asynchronous library</td><td class="titleTableTopNav" align="right"><a href="../../../../package-summary.html" onclick="loadClassListFrame('../../../../all-classes.html')">All Packages</a>&nbsp;|&nbsp;<a href="../../../../class-summary.html" onclick="loadClassListFrame('../../../../all-classes.html')">All Classes</a>&nbsp;|&nbsp;<a href="../../../../all-index-A.html" onclick="loadClassListFrame('../../../../index-list.html')">Index</a>&nbsp;|&nbsp;<a id="framesLink1" href="../../../../index.html?vm/miix/grit/wire/GritWire.html&amp;vm/miix/grit/wire/class-list.html">Frames</a><a id="noFramesLink1" style="display:none" href="" onclick="parent.location=document.location"> No Frames </a></td><td class="titleTableLogo" align="right" rowspan="3"><img src="../../../../images/logo.jpg" class="logoImage" alt=" Adobe Logo " title=" Adobe Logo "></td></tr><tr class="titleTableRow2"><td class="titleTableSubTitle" id="subTitle" align="left">GritWire</td><td class="titleTableSubNav" id="subNav" align="right"><a href="#methodSummary">Methods</a>&nbsp;| <a href="#includeExamplesSummary">Examples</a></td></tr><tr class="titleTableRow3"><td colspan="3">&nbsp;</td></tr></table><script language="javascript" type="text/javascript" xml:space="preserve">
+				<!--
+				
+					if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("GritWire"); titleBar_setSubNav(false,false,false,false,false,false,false,false,true,true,false	,false,false,false,false,false);}	
+				-->
+			</script><div xmlns:fn="http://www.w3.org/2005/xpath-functions" class="MainContent"><table class="classHeaderTable" cellpadding="0" cellspacing="0"><tr><td class="classHeaderTableLabel">Package</td><td><a href="package-detail.html" onclick="javascript:loadClassListFrame('class-list.html')">vm.miix.grit.wire</a></td></tr><tr><td class="classHeaderTableLabel">Class</td><td class="classSignature">public  class  GritWire</td></tr><tr><td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">GritWire  <img src="../../../../images/inherit-arrow.gif" title="Inheritance" alt="Inheritance" class="inheritArrow"> Object</td></tr><tr><td class="classHeaderTableLabel">Implements</td><td> <a href="../../../../vm/miix/grit/wire/IContext.html">IContext</a></td></tr></table><p></p><p></p><p></p>
+	 main class of GritWire within main swf thread.
+	 Manages servers, connections and tasks within main swf thread.
+	 <code>GritTask</code> manages servers, connections and tasks within secondary swf thread.
+	 <p></p><p><a href="#includeExamplesSummary">View the examples</a></p><p><span class="classHeaderTableLabel">See also</span></p><div class="seeAlso"><a href="GritTask.html" target="">vm.miix.grit.wire.GritTask</a></div><br/><hr></div><a name="methodSummary"></a><div class="summarySection"><div class="summaryTableTitle">Public Methods </div><table cellspacing="0" cellpadding="3" class="summaryTable " id="summaryTableMethod"><tr><th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined By</th></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#GritWire()" class="signatureLink">GritWire</a>()</div><div class="summaryTableDescription"></div></td><td class="summaryTableOwnerCol">GritWire</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#checkInSharedBytes()" class="signatureLink">checkInSharedBytes</a>(name:String):<a href="../../../../vm/miix/grit/promise/IPromise.html">IPromise</a></div><div class="summaryTableDescription">
+		 
+		 check in shared bytes with name name.</div></td><td class="summaryTableOwnerCol">GritWire</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#connect()" class="signatureLink">connect</a>(address:<a href="../../../../vm/miix/grit/wire/Address.html">Address</a>):<a href="../../../../vm/miix/grit/promise/IPromise.html">IPromise</a></div><div class="summaryTableDescription">
+		 
+		 connect to a server with address address.</div></td><td class="summaryTableOwnerCol">GritWire</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#createSharedBytes()" class="signatureLink">createSharedBytes</a>(name:String):<a href="../../../../vm/miix/grit/promise/IPromise.html">IPromise</a></div><div class="summaryTableDescription">
+		 
+		 create new shared bytes with name name
+		 </div></td><td class="summaryTableOwnerCol">GritWire</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#deploy()" class="signatureLink">deploy</a>(qualifiedClassName:String, param:*):<a href="../../../../vm/miix/grit/promise/IPromise.html">IPromise</a></div><div class="summaryTableDescription">
+		 
+		 deploy new task.</div></td><td class="summaryTableOwnerCol">GritWire</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#registerServer()" class="signatureLink">registerServer</a>(descriptor:<a href="../../../../vm/miix/grit/wire/ServerDescriptor.html">ServerDescriptor</a>, onConnected:Function):<a href="../../../../vm/miix/grit/promise/IPromise.html">IPromise</a></div><div class="summaryTableDescription">
+		 
+		 register server which listens to address address.</div></td><td class="summaryTableOwnerCol">GritWire</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#start()" class="signatureLink">start</a>(gritBytes:ByteArray):<a href="../../../../vm/miix/grit/promise/IPromise.html">IPromise</a></div><div class="summaryTableDescription">
+		 start Grit.</div></td><td class="summaryTableOwnerCol">GritWire</td></tr></table></div><script language="javascript" type="text/javascript"><!--
+										showHideInherited();
+										--></script><div class="MainContent"><a name="constructorDetail"></a><div class="detailSectionHeader">Constructor Detail</div><a name="GritWire()"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">GritWire</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">Constructor</td></tr></table><div class="detailBody"><code>public function GritWire()</code><p></p><br/><br/></div><a name="methodDetail"></a><div class="detailSectionHeader">Method Detail</div><a name="checkInSharedBytes()"></a><a name="checkInSharedBytes(String)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">checkInSharedBytes</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td></tr></table><div class="detailBody"><code> public function checkInSharedBytes(name:String):<a href="../../../../vm/miix/grit/promise/IPromise.html">IPromise</a></code><p></p><p></p><p>
+		 
+		 check in shared bytes with name <code>name</code>.
+		 After check in only recipient has access to the shared bytes.
+		 After read / write operations recipient must call <code>ISharedBytes.checkOut()</code>
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">name</span>:String</code> &mdash; name of shared bytes to be check in
+		 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code><a href="../../../../vm/miix/grit/promise/IPromise.html">IPromise</a></code> &mdash; promise on <code>ISharedBytes</code>, which will be resolved when all previously check out's
+		 are check in'ed
+		 </td></tr></table></div><a name="connect()"></a><a name="connect(vm.miix.grit.wire.Address)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">connect</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function connect(address:<a href="../../../../vm/miix/grit/wire/Address.html">Address</a>):<a href="../../../../vm/miix/grit/promise/IPromise.html">IPromise</a></code><p></p><p></p><p>
+		 
+		 connect to a server with address <code>address</code>.
+		 Server must be registered using <code>registerServer</code> before connecting to it
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">address</span>:<a href="../../../../vm/miix/grit/wire/Address.html">Address</a></code> &mdash; server address to be connected to
+		 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code><a href="../../../../vm/miix/grit/promise/IPromise.html">IPromise</a></code> &mdash; <code>promise</code>, which resolved with <code>Messenger</code> when connection is successfully  established
+		 or with error reason if some error has been occured.
+		 To close connection call <code>Messenger.publisher.complete()</code>.
+		 </td></tr></table></div><a name="createSharedBytes()"></a><a name="createSharedBytes(String)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">createSharedBytes</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function createSharedBytes(name:String):<a href="../../../../vm/miix/grit/promise/IPromise.html">IPromise</a></code><p></p><p></p><p>
+		 
+		 create new shared bytes with name <code>name</code>
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">name</span>:String</code> &mdash; name of created shared bytes to reference on
+		 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code><a href="../../../../vm/miix/grit/promise/IPromise.html">IPromise</a></code> &mdash; promise on <code>IRegistration</code> to remove this shared bytes
+		 </td></tr></table></div><a name="deploy()"></a><a name="deploy(String,any)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">deploy</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function deploy(qualifiedClassName:String, param:*):<a href="../../../../vm/miix/grit/promise/IPromise.html">IPromise</a></code><p></p><p></p><p>
+		 
+		 deploy new task.
+		 <p>When deploying new instance of the task is created</p>
+		 <p>Task must implement <code>ITask</code></p>
+		 <p>When task is completed all servers, connections and shared bytes opened within this task are closed</p>
+		 <p>While all tasks deployed from this task continue to work</p>
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">qualifiedClassName</span>:String</code> &mdash; full name of class to be instantiated as deployed task.
+		 The class must implement <code>ITask</code>
+		 </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">param</span>:*</code> (default = <code>NaN</code>)<code></code> &mdash; param send to task on running
+		 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code><a href="../../../../vm/miix/grit/promise/IPromise.html">IPromise</a></code> &mdash; <code>promise</code>, which is resolved with <code>IRegistration</code>,
+		 when task is successfully deployed or with error reason if some error has been occured
+		 </td></tr></table></div><a name="registerServer()"></a><a name="registerServer(vm.miix.grit.wire.ServerDescriptor,Function)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">registerServer</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function registerServer(descriptor:<a href="../../../../vm/miix/grit/wire/ServerDescriptor.html">ServerDescriptor</a>, onConnected:Function):<a href="../../../../vm/miix/grit/promise/IPromise.html">IPromise</a></code><p></p><p></p><p>
+		 
+		 register server which listens to address <code>address</code>.
+		 When new connection is established <code>onConnected</code> is called
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">descriptor</span>:<a href="../../../../vm/miix/grit/wire/ServerDescriptor.html">ServerDescriptor</a></code> &mdash; server descriptor, which is server address, server type and connection attributes
+		 </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">onConnected</span>:Function</code> &mdash; callback called when new connection is established
+		 <div class="listing" version="3.0"><pre> function onConnected( socket : Messenger ) : void; </pre></div>
+		 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code><a href="../../../../vm/miix/grit/promise/IPromise.html">IPromise</a></code> &mdash; <code>promise</code>, which is resolved with <code>IRegistration</code>,
+		 when server is successfully registered or with error reason if some error has been occured.
+		 If this registration is canceled, all connections related to this server are closed.
+		 </td></tr></table></div><a name="start()"></a><a name="start(flash.utils.ByteArray)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">start</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public function start(gritBytes:ByteArray):<a href="../../../../vm/miix/grit/promise/IPromise.html">IPromise</a></code><p></p><p></p><p>
+		 start Grit. Must be called before using to initialize threads
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">gritBytes</span>:ByteArray</code></td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code><a href="../../../../vm/miix/grit/promise/IPromise.html">IPromise</a></code> &mdash; <code>promise</code> resolved with this wire context - <code>IContext</code>
+		 or rejected if some error has been occured
+		 </td></tr></table><p><span class="label">See also</span></p><div class="seeAlso"><a href="IContext.html" target="">vm.miix.grit.wire.IContext</a></div></div><a name="includeExamplesSummary"></a><div class="detailSectionHeader">Examples</div><div class="detailBody">grit usage:
+		 <ul>
+		 <li>main or primordial swf file is used to create secondary thread</li>
+		 <li>instantiate and start <code>GritWire</code> at main or primordial thread</li>
+		 <li>instantiate <code>GritTask</code> at secondary thread</li>
+		 <li>deploy task, which implements <code>ITask</code> interface</li>
+		 <li>task registers server and listen on</li>
+		 <li>when task is started, server is connected from main thread and send message to </li>
+		 </ul>
+			<div class="listing"><pre>
+                
+                // main class - initialize Grit, deploy server and connect to
+                public class ServerTestMain extends Sprite
+                {
+        
+                    // main or sub-thread context
+                    private var wireContext : IContext;
+    
+                    public function ServerTestMain() {
+                        if ( Worker.current.isPrimordial ) {
+                            if ( stage ) init();
+                            else addEventListener( Event.ADDED_TO_STAGE, init );
+                        }
+                        else {
+                            // secondary thread - instantiate GritTask as thread context
+                            wireContext = new GritTask();
+                        }
+                    }
+                
+                    
+                    private function init( e : Event = null ) : void {
+            
+                        removeEventListener( Event.ADDED_TO_STAGE, init );
+            
+                        // primordial thread - instantiate GritWire as thread context
+                        var wire : GritWire = new GritWire();
+                        wireContext = wire;
+            
+                        // start the grit
+                        wire.start( loaderInfo.bytes ).onCompleted (
+                            started, // function called when secondary thread is started
+                            function ( reason : ) : void { trace( reason ); }
+                        );
+                    }
+        
+                    
+                    // grit is started - deploy tasks, create connections etc
+                    private function started( context : IContext ) : void {            
+                        context.deploy( getQualifiedClassName( ServerTestTask ) ).onCompleted (
+                            function ( val : ) : void {
+                                context.connect( new Address( "ServerAddress" ) ).onCompleted (                         
+                                    function ( messenger : Messenger ) : void {
+                                        messenger.emitter.subscribe    ( 
+                                            function ( info : String ) : void {
+                                                trace( "server said: ", info );
+                                            }
+                                        );
+                                        messenger.publisher.publish( "Hello, Server!" );
+                                    },
+                                function ( reason : ) : void { trace( "not connected: ", reason ); } );
+                            }
+                        );
+                    }
+                }
+
+    
+                // task, which creates server and listen on
+                public class ServerTestTask implements ITask
+                {
+        
+                    public function ServerTestTask() {
+            
+                    }
+    
+                    private function onServer( messenger : Messenger ) : void {
+                        messenger.emitter.subscribe (
+                            function ( info : String ) : void {
+                                trace( "Server receives: ", info );
+                                messenger.publisher.publish( "Hello!" );
+                            }
+                        );
+                    }
+        
+                    public function run( context : IContext, registration : IRegistration, param : ) : IPromise {
+                        return context.registerServer ( new ServerDescriptor( new Address( "ServerAddress" ),
+                            ServerTypes.INTERNAL ), onServer );
+                    }
+        
+                }
+                
+            </pre></div>
+	 </div><br/><br/><hr><br/><p></p><center class="copyright"><footer></footer><br/>Tue Jun 30 2015, 08:12 PM +04:00  </center></div></body></html><!--<br/>Tue Jun 30 2015, 08:12 PM +04:00  -->

@@ -10,7 +10,7 @@ Consists of following parts:
 Only one additional to main thread (worker) is used to run any number of tasks.
 Any task must run in non-blocking way to get another tasks be performed
 
-###project stucture:
+###project structure:
 * <a href="https://github.com/LisiLisenok/Grit/tree/master/Examples">Examples folder</a> contains examples of the Grit usage
 * <a href="https://github.com/LisiLisenok/Grit/tree/master/GritWire">GritWire folder</a> contains Grit source code
 * <a href="https://github.com/LisiLisenok/Grit/tree/master/Lib">Lib folder</a> contains .swc files with Grit library and some additional libraries (tasks can be deployed within Grit)

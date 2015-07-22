@@ -12,11 +12,15 @@ package vm.miix.grit.collection
 		 * first item in the list
 		 */
 		internal var first : ListItem = null;
+		
 		/**
 		 * last item in the list
 		 */
 		internal var last : ListItem = null;
 		
+		/**
+		 * items to be added
+		 */
 		private var addStack : Vector.<ListItem> = new Vector.<ListItem>();
 		
 		/**
@@ -29,12 +33,20 @@ package vm.miix.grit.collection
 		 */
 		private var locking : uint = 0;
 		
+		
+		/**
+		 * creates new empty list
+		 */
 		public function List() {
 			super();
 		}
 		
 		
+		/**
+		 * true if list is locked to add / remove items
+		 */
 		public function get isLocked() : Boolean { return locking > 0; }
+		
 		
 		private function putListItem( listItem : ListItem, before : ListItem ) : void {
 			listItem.next = before;
@@ -84,21 +96,26 @@ package vm.miix.grit.collection
 		 * @param	listItem item to be removed
 		 */
 		internal function removeItem( listItem : ListItem ) : void {
-			listItem.inLife = false;
-			_size --;
-			if ( !isLocked ) {
-				var prev : ListItem = listItem.prev;
-				if ( prev ) {
-					prev.next = listItem.next;
-					if ( listItem.next ) listItem.next.prev = prev;
-					else last = prev;
-					listItem.prev = null;
+			if ( !listItem.isCanceled ) {
+				_size --;
+				if ( !isLocked ) {
+					listItem.state = ListItem.STATE_CANCELED;
+					var prev : ListItem = listItem.prev;
+					if ( prev ) {
+						prev.next = listItem.next;
+						if ( listItem.next ) listItem.next.prev = prev;
+						else last = prev;
+						listItem.prev = null;
+					}
+					else {
+						first = listItem.next;
+						if ( first ) first.prev = null;
+						else last = null;
+						listItem.next = null;
+					}
 				}
 				else {
-					first = listItem.next;
-					if ( first ) first.prev = null;
-					else last = null;
-					listItem.next = null;
+					listItem.state = ListItem.STATE_REMOVING;
 				}
 			}
 		}
@@ -117,7 +134,7 @@ package vm.miix.grit.collection
 				var item : ListItem = first;
 				while ( item ) {
 					var tmp : ListItem = item.next;
-					if ( !item.inLife ) removeItem( item );
+					if ( item.isRemoving ) removeItem( item );
 					item = tmp;
 				}
 			}
@@ -139,13 +156,13 @@ package vm.miix.grit.collection
 				},
 				function () : void {
 					if ( listItem ) {
-						listItem.active = true;
+						listItem.state = ListItem.STATE_ACTIVE;
 						_size ++;
 					}
 				},
 				function () : void {
 					if ( listItem ) {
-						listItem.active = false;
+						listItem.state = ListItem.STATE_INACTIVE;
 						_size --;
 					}
 				}
@@ -243,7 +260,7 @@ package vm.miix.grit.collection
 			// remove items
 			var item : ListItem = first;
 			while ( item ) {
-				item.inLife = false;
+				item.state = ListItem.STATE_REMOVING;
 				item = item.next;
 			}
 			normalize();

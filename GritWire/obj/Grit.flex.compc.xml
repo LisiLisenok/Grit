@@ -68,9 +68,11 @@
     <class>vm.miix.grit.emitter.PublisherList</class>
     <class>vm.miix.grit.emitter.PublisherProxy</class>
     <class>vm.miix.grit.promise.Deferred</class>
+    <class>vm.miix.grit.promise.IOperation</class>
     <class>vm.miix.grit.promise.IPromisable</class>
     <class>vm.miix.grit.promise.IPromise</class>
     <class>vm.miix.grit.promise.IResolver</class>
+    <class>vm.miix.grit.promise.Operation</class>
     <class>vm.miix.grit.promise.Promise</class>
     <class>vm.miix.grit.promise.Resolver</class>
     <class>vm.miix.grit.trigger.IRegistration</class>

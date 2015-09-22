@@ -128,6 +128,20 @@ package vm.miix.grit.collection
 		
 		
 		/* INTERFACE vm.miix.grit.collection.IIterable */
+		
+		/**
+		 * @inheritDoc
+		 */
+		override public function get first() : Object {
+			return getAt( 0 );
+		}
+		
+		/**
+		 * @inheritDoc
+		 */
+		override public function get last() : Object {
+			return getAt( size - 1 );
+		}
 
 		/**
 		 * @inheritDoc

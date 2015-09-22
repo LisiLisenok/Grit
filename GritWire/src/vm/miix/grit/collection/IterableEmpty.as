@@ -23,6 +23,20 @@ package vm.miix.grit.collection
 		/**
 		 * @inheritDoc
 		 */
+		public function get first() : Object {
+			return null;
+		}
+		
+		/**
+		 * @inheritDoc
+		 */
+		public function get last() : Object {
+			return null;
+		}
+		
+		/**
+		 * @inheritDoc
+		 */
 		public function get sequence() : IIndexed { return this; }
 
 		/**

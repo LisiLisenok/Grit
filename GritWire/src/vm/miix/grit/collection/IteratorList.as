@@ -43,7 +43,7 @@ package vm.miix.grit.collection
 		 */
 		public function hasPrevious() : Boolean {
 			if ( _current ) return list.prevActive( _current.prev ) != null;
-			else return list.prevActive( list.last ) != null;
+			else return list.prevActive( list._last ) != null;
 		}
 		
 		/**
@@ -56,7 +56,7 @@ package vm.miix.grit.collection
 				else flipStart();
 			}
 			else {
-				_current = list.prevActive( list.last );
+				_current = list.prevActive( list._last );
 				if ( _current ) return _current.item;
 			}
 			return null;
@@ -68,7 +68,7 @@ package vm.miix.grit.collection
 		public function item() : Object {
 			if ( _current ) return _current.item;
 			else {
-				var l : ListItem = list.prevActive( list.last );
+				var l : ListItem = list.prevActive( list._last );
 				if ( l ) return l.item;
 			}
 			return null;
@@ -78,7 +78,7 @@ package vm.miix.grit.collection
 		 * @inheritDoc
 		 */
 		public function flipStart() : void {
-			_current = list.nextActive( list.first );
+			_current = list.nextActive( list._first );
 		}
 		
 		/**

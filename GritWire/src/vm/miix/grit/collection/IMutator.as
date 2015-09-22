@@ -22,11 +22,6 @@ package vm.miix.grit.collection
 		 */
 		function remove() : Object;
 		
-		/**
-		 * returns item at current position without moving position
-		 */
-		function get current() : Object;
-		
 	}
 	
 }

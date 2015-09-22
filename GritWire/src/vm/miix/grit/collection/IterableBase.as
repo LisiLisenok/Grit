@@ -8,6 +8,7 @@ package vm.miix.grit.collection
 	internal class IterableBase implements IIterable 
 	{
 		
+		// empty iterable - static
 		internal static const emptyIterable : IIndexed = new IterableEmpty();
 		
 		/**
@@ -21,7 +22,9 @@ package vm.miix.grit.collection
 			return arr;
 		}
 		
+		// number of items in iterable if -1 - must be calculated
 		private var _size : int = -1;
+		
 		
 		public function IterableBase() {
 		}
@@ -57,6 +60,22 @@ package vm.miix.grit.collection
 		 */
 		public function get iterator() : IIterator { return null; }
 		
+		/**
+		 * @inheritDoc
+		 */
+		public function get first() : Object {
+			return iterator.next();
+		}
+		
+		/**
+		 * @inheritDoc
+		 */
+		public function get last() : Object {
+			var iter : IIterator = iterator;
+			iter.flipEnd();
+			return iter.previous();
+		}
+
 		/**
 		 * @inheritDoc
 		 */

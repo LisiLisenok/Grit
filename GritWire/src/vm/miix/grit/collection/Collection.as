@@ -112,6 +112,23 @@ package vm.miix.grit.collection
 		
 		/**
 		 * @inheritDoc
+		 */
+		override public function get first() : Object {
+			if ( _vector.length > 0 ) return _vector[0];
+			else return null;
+		}
+		
+		/**
+		 * @inheritDoc
+		 */
+		override public function get last() : Object {
+			var n : int = _vector.length;
+			if ( n > 0 ) return _vector[n - 1];
+			else return null;
+		}
+
+		/**
+		 * @inheritDoc
 		 * <p><i>lazy</i></p>
 		 */
 		override public function get sequence() : IIndexed { return this; }

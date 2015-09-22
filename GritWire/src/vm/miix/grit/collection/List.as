@@ -11,27 +11,27 @@ package vm.miix.grit.collection
 		/**
 		 * first item in the list
 		 */
-		internal var first : ListItem = null;
+		internal var _first : ListItem = null;
 		
 		/**
 		 * last item in the list
 		 */
-		internal var last : ListItem = null;
+		internal var _last : ListItem = null;
 		
 		/**
 		 * items to be added
 		 */
-		private var addStack : Vector.<ListItem> = new Vector.<ListItem>();
+		private var _addStack : Vector.<ListItem> = new Vector.<ListItem>();
 		
 		/**
 		 * number of items in the list
 		 */
-		internal var _size : int = 0;
+		private var _size : int = 0;
 		
 		/**
 		 * if == 0 then uncloked, if > 0 then locked
 		 */
-		private var locking : uint = 0;
+		private var _locking : uint = 0;
 		
 		
 		/**
@@ -45,7 +45,7 @@ package vm.miix.grit.collection
 		/**
 		 * true if list is locked to add / remove items
 		 */
-		public function get isLocked() : Boolean { return locking > 0; }
+		public function get isLocked() : Boolean { return _locking > 0; }
 		
 		
 		private function putListItem( listItem : ListItem, before : ListItem ) : void {
@@ -58,21 +58,21 @@ package vm.miix.grit.collection
 					prev.next = listItem;
 				}
 				else {
-					first = listItem;
+					_first = listItem;
 					listItem.prev = null;
-					if ( last == null ) last = listItem;
+					if ( _last == null ) _last = listItem;
 				}
 			}
 			else {
-				if ( last ) {
-					listItem.prev = last;
-					last.next = listItem;
-					last = listItem;
+				if ( _last ) {
+					listItem.prev = _last;
+					_last.next = listItem;
+					_last = listItem;
 				}
 				else {
 					listItem.prev = null;
-					first = listItem;
-					last = listItem;
+					_first = listItem;
+					_last = listItem;
 				}
 			}
 			_size ++;
@@ -87,7 +87,7 @@ package vm.miix.grit.collection
 		internal function putBefore( item : Object, before : ListItem ) : ITriggered {
 			var listItem : ListItem = new ListItem( item, before, null );			
 			if ( !isLocked ) putListItem( listItem, before );
-			else addStack.push( listItem );
+			else _addStack.push( listItem );
 			return itemTriggered( listItem );
 		}
 		
@@ -97,26 +97,37 @@ package vm.miix.grit.collection
 		 */
 		internal function removeItem( listItem : ListItem ) : void {
 			if ( !listItem.isCanceled ) {
-				_size --;
+				if ( !listItem.isRemoving ) _size --;
 				if ( !isLocked ) {
 					listItem.state = ListItem.STATE_CANCELED;
-					var prev : ListItem = listItem.prev;
-					if ( prev ) {
-						prev.next = listItem.next;
-						if ( listItem.next ) listItem.next.prev = prev;
-						else last = prev;
-						listItem.prev = null;
-					}
-					else {
-						first = listItem.next;
-						if ( first ) first.prev = null;
-						else last = null;
-						listItem.next = null;
-					}
+					removeItemFromList( listItem );
 				}
 				else {
 					listItem.state = ListItem.STATE_REMOVING;
 				}
+			}
+		}
+		
+		/**
+		 * directly remove item from list without changing state and nevetherless list is locked or not
+		 * @param	listItem
+		 */
+		internal function removeItemFromList( listItem  : ListItem ) : void {
+			var prev : ListItem = listItem.prev;
+			if ( prev ) {
+				prev.next = listItem.next;
+				if ( listItem.next ) {
+					listItem.next.prev = prev;
+					listItem.next = null;
+				}
+				else _last = prev;
+				listItem.prev = null;
+			}
+			else {
+				_first = listItem.next;
+				if ( _first ) _first.prev = null;
+				else _last = null;
+				listItem.next = null;
 			}
 		}
 		
@@ -126,12 +137,12 @@ package vm.miix.grit.collection
 		private function normalize() : void {
 			if ( !isLocked ) {
 				// add items
-				for ( var i : int = 0; i < addStack.length; i ++ ) {
-					putListItem( addStack[i], addStack[i].next );
+				for ( var i : int = 0; i < _addStack.length; i ++ ) {
+					putListItem( _addStack[i], _addStack[i].next );
 				}
-				addStack.splice( 0, addStack.length );
+				_addStack.splice( 0, _addStack.length );
 				// remove items
-				var item : ListItem = first;
+				var item : ListItem = _first;
 				while ( item ) {
 					var tmp : ListItem = item.next;
 					if ( item.isRemoving ) removeItem( item );
@@ -217,8 +228,24 @@ package vm.miix.grit.collection
 		/**
 		 * @inheritDoc
 		 */
+		override public function get first() : Object {
+			if ( _first ) return _first.item;
+			else return null;
+		}
+		
+		/**
+		 * @inheritDoc
+		 */
+		override public function get last() : Object {
+			if ( _last ) return _last.item;
+			else return null;
+		}
+		
+		/**
+		 * @inheritDoc
+		 */
 		public function add( item : Object ) : ITriggered {
-			return putBefore( item, first );
+			return putBefore( item, _first );
 		}
 		
 		/**
@@ -232,7 +259,7 @@ package vm.miix.grit.collection
 		 * @inheritDoc
 		 */
 		public function accept() : Object {
-			var rem : ListItem = nextActive( first );
+			var rem : ListItem = nextActive( _first );
 			if ( rem ) {
 				removeItem( rem );
 				return rem.item;
@@ -244,7 +271,7 @@ package vm.miix.grit.collection
 		 * @inheritDoc
 		 */
 		public function pop() : Object {
-			var rem : ListItem = prevActive( last );
+			var rem : ListItem = prevActive( _last );
 			if ( rem ) {
 				removeItem( rem );
 				return rem.item;
@@ -256,14 +283,15 @@ package vm.miix.grit.collection
 		 * @inheritDoc
 		 */
 		public function clear() : void {
-			addStack.splice( 0, addStack.length );
+			_addStack.splice( 0, _addStack.length );
 			// remove items
-			var item : ListItem = first;
+			var item : ListItem = _first;
 			while ( item ) {
 				item.state = ListItem.STATE_REMOVING;
 				item = item.next;
 			}
 			normalize();
+			_size = 0;
 		}
 		
 		/**
@@ -276,14 +304,14 @@ package vm.miix.grit.collection
 		 * @inheritDoc
 		 */		
 		public function lock() : void {
-			locking ++;
+			_locking ++;
 		}
 		
 		/**
 		 * @inheritDoc
 		 */		
 		public function unlock() : void {
-			if ( locking > 0 ) locking --;
+			if ( _locking > 0 ) _locking --;
 			normalize();
 		}
 		

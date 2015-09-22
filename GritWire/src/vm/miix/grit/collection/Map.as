@@ -32,7 +32,8 @@ package vm.miix.grit.collection
 			super( null );
 			var builder : MapBuilder = new MapBuilder( compare );
 			keys.zip( items, function ( key : Object, item : Object ) : void {
-					if ( key != null && item != null ) {
+					//if ( key != null && item != null ) {
+					if ( key != null ) {
 						builder.add( key, item );
 					}
 				}

@@ -1,6 +1,7 @@
 package vm.miix.grit.collection 
 {
 	import vm.miix.grit.trigger.ITriggered;
+	
 	/**
 	 * list mutator
 	 * @author Lis
@@ -12,12 +13,19 @@ package vm.miix.grit.collection
 			super( list );
 		}
 		
+		
 		/* INTERFACE vm.miix.grit.collection.IMutator */
 		
+		/**
+		 * @inheritDoc
+		 */
 		public function insert( item : Object ) : ITriggered {
 			return list.putBefore( item, _current );
 		}
 		
+		/**
+		 * @inheritDoc
+		 */
 		public function remove() : Object {
 			if ( _current ) {
 				var rem : ListItem = _current;
@@ -28,10 +36,6 @@ package vm.miix.grit.collection
 			return null;
 		}
 		
-		public function get current() : Object {
-			if ( _current ) return _current.item;
-			else return null;
-		}
 		
 	}
 

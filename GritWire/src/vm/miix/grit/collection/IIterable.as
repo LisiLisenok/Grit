@@ -35,6 +35,16 @@ package vm.miix.grit.collection
 		function get iterator() : IIterator;
 		
 		/**
+		 * first object returned by iterator
+		 */
+		function get first() : Object;
+		
+		/**
+		 * first object returned by iterator
+		 */
+		function get last() : Object;
+		
+		/**
 		 * infinite cycling iterating.
 		 * Iteration is reversed when reaching collection end (or start).
 		 * <code>nextCycle</code> is called each time when next cycle is started.
@@ -124,7 +134,7 @@ package vm.miix.grit.collection
 		 * produces new collection with elements mapped by <code>mapping</code> function
 		 * <p><i>lazy</i></p>
 		 * @param	mapping function have to return mapped or converted element to be contained in returned collection
-		 * <listing version="3.0"> function mapping( item : Object ) : Boolean; </listing>
+		 * <listing version="3.0"> function mapping( item : Object ) : Object; </listing>
 		 * @return collection with mapped elements
 		 */
 		function map( mapping : Function ) : IIterable;

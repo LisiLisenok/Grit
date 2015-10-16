@@ -168,6 +168,24 @@ package vm.miix.grit.wire
 		}
 		
 		
+		/**
+		 * terminate context. This will abort the current executions
+		 */
+		public function terminate() : void {
+			if ( context ) {
+				var tmpContext : ContextThread = context;
+				context = null;
+				tmpContext.terminate();
+			}
+			if ( gritWorker ) {
+				gritWorker.removeEventListener( Event.WORKER_STATE, onWorkerState );
+				var tmpWorker : Worker = gritWorker;
+				gritWorker = null;
+				tmpWorker.terminate();
+			}
+		}
+		
+		
 		/* INTERFACE vm.miix.grit.wire.IContext */
 		
 		/**

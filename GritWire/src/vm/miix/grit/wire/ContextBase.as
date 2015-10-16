@@ -96,6 +96,12 @@ package vm.miix.grit.wire
 			if ( incomeChannel && incomeChannel.state != MessageChannelState.OPEN ) {
 				incomeChannel.removeEventListener( Event.CHANNEL_MESSAGE, performMessageCycling );
 				incomeChannel.removeEventListener( Event.CHANNEL_STATE, channelState );
+				incomeChannel = null;
+				if ( outcomeChannel ) {
+					var tmp : MessageChannel = outcomeChannel;
+					outcomeChannel = null;
+					tmp.close();
+				}
 			}
 		}
 		
@@ -122,6 +128,23 @@ package vm.miix.grit.wire
 			return null;
 		}
 		
+		/**
+		 * terminate this context and message channels
+		 */
+		internal function terminate() : void {
+			if ( incomeChannel ) {
+				incomeChannel.removeEventListener( Event.CHANNEL_MESSAGE, performMessageCycling );
+				incomeChannel.removeEventListener( Event.CHANNEL_STATE, channelState );
+				var tmp : MessageChannel = incomeChannel;
+				incomeChannel = null;
+				tmp.close();
+			}
+			if ( outcomeChannel ) {
+				tmp = outcomeChannel;
+				outcomeChannel = null;
+				tmp.close();
+			}
+		}
 		
 		/* INTERFACE vm.miix.grit.wire.IMessageExchanger */
 		
@@ -145,7 +168,7 @@ package vm.miix.grit.wire
 				messenger.emitter.subscribe (
 					// value emitted
 					function ( body : * ) : void {
-						if ( messenger ) {
+						if ( messenger && outcomeChannel ) {
 							if ( outcomeChannel.state == MessageChannelState.OPEN ) {
 								try {
 									sendCommand( new Command( strMSG, address.host, address.port,
@@ -167,7 +190,7 @@ package vm.miix.grit.wire
 					},
 					// completed
 					function () : void {
-						if ( messenger ) {
+						if ( messenger && outcomeChannel ) {
 							if ( outcomeChannel.state == MessageChannelState.OPEN ) {
 								try {
 									sendCommand( new Command( strComplete, address.host, address.port,
@@ -189,7 +212,7 @@ package vm.miix.grit.wire
 					},
 					// error
 					function ( reason : * ) : void {
-						if ( messenger ) {
+						if ( messenger && outcomeChannel ) {
 							if ( outcomeChannel.state == MessageChannelState.OPEN ) {
 								try {
 									sendCommand( new Command( strErr, address.host, address.port,
@@ -227,11 +250,15 @@ package vm.miix.grit.wire
 		 * @inheritDoc
 		 */
 		public function performMessageCycling( event : Event = null ) : void {
-			if ( incomeChannel ) {
-				while ( incomeChannel.messageAvailable ) {
-					var command : Command = incomeChannel.receive() as Command;
-					if ( command != null ) commandResponders.invoke( command.command, command );
+			var command : Command;
+			while ( messageAvailable ) {
+				try {
+					command = incomeChannel.receive() as Command;
 				}
+				catch ( err : Error ) {
+					command = null;
+				}
+				if ( command != null ) commandResponders.invoke( command.command, command );
 			}
 		}
 		
